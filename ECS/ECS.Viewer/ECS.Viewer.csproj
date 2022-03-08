@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2885193D-7B35-49A6-8B96-BB4E1C8C891F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ECS.Viewer</RootNamespace>
+    <AssemblyName>ECS.Viewer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://192.168.12.20:80/</InstallUrl>
+    <UpdateUrl>http://192.168.12.20:80/</UpdateUrl>
+    <SupportUrl>http://www.urcis.com</SupportUrl>
+    <ErrorReportUrl>http://www.urcis.com</ErrorReportUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>ECS Viwer</ProductName>
+    <PublisherName>URCIS</PublisherName>
+    <SuiteName>ECS</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.11.0.0</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ECS_Viewer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A737A1BBF12E63A28FE924178AC1CB2B5FC7245D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ECS.Viewer_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors">
+      <HintPath>..\ECS.Model\Library\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf">
+      <HintPath>..\ECS.Model\Library\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ECS.Model\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.v3">
+      <HintPath>..\ECS.Model\Library\SmartCode.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.Wpf.v3">
+      <HintPath>..\ECS.Model\Library\SmartCode.Wpf.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Views\Controls\EcsViewerMenuItem.xaml.cs">
+      <DependentUpon>EcsViewerMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\SimpleChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\SmartPackingRejectScreen.xaml.cs">
+      <DependentUpon>SmartPackingRejectScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\InvoiceRejectScreen.xaml.cs">
+      <DependentUpon>InvoiceRejectScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MainScreen.xaml.cs">
+      <DependentUpon>MainScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\MonitoringScreen.xaml.cs">
+      <DependentUpon>MonitoringScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\OrderSearchScreen.xaml.cs">
+      <DependentUpon>OrderSearchScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\OutChartScreen.xaml.cs">
+      <DependentUpon>OutChartScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\OutManageScreen.xaml.cs">
+      <DependentUpon>OutManageScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\TrackingLogSearchScreen.xaml.cs">
+      <DependentUpon>TrackingLogSearchScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\TrackingSearchScreen.xaml.cs">
+      <DependentUpon>TrackingSearchScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\WeightRejectScreen.xaml.cs">
+      <DependentUpon>WeightRejectScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\Controls\EcsViewerMenuItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\SmartPackingRejectScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\InvoiceRejectScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\MainScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\MonitoringScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\OrderSearchScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\OutChartScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\OutManageScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\TrackingLogSearchScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pages\TrackingSearchScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\WeightRejectScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ECS.Viewer_TemporaryKey.pfx" />
+    <Resource Include="Font\CJ ONLYONE NEW body Light.ttf" />
+    <Resource Include="Font\CJ ONLYONE NEW body Regular.ttf" />
+    <Resource Include="Font\CJ ONLYONE NEW title Bold.ttf" />
+    <Resource Include="Font\CJ ONLYONE NEW title Medium.ttf" />
+    <Resource Include="Font\NotoSans-Black.ttf" />
+    <Resource Include="Font\NotoSansCJKkr-Black.otf" />
+    <Resource Include="Font\본고딕KR-Normal.ttf" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Barcode.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_down_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_up_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btnline11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btnline1170.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btnlineDisable-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Buffer.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CVBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Human.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon-07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon-08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_190_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_190_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\infobox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Invoice.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Laser.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LedOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LedOn.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainBackground1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Motor.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Origin.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Setting.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab06_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab06_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icon_Refresh.png" />
+    <Resource Include="Images\Icon_Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Viewer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Viewer 16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Viewer 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Viewer 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Viewer 128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ECS_Viewer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ndp48-x86-x64-allos-enu.exe" />
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECS.Core\ECS.Core.csproj">
+      <Project>{b20e9279-2c4e-411d-976a-825da113d1d8}</Project>
+      <Name>ECS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ECS.Model\ECS.Model.csproj">
+      <Project>{5ecccc44-f2e8-4b76-8136-2ada4bc11b41}</Project>
+      <Name>ECS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)ndp48-x86-x64-allos-enu.exe" "C:\Program Files (x86)\Microsoft SDKs\ClickOnce Bootstrapper\Packages\DotNetFX48"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

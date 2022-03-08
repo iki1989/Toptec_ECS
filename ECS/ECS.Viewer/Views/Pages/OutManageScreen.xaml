@@ -1,0 +1,308 @@
+﻿<Page x:Class="ECS.Viewer.Views.Pages.OutManageScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:sys ="clr-namespace:System;assembly=mscorlib"
+      xmlns:local="clr-namespace:ECS.Viewer.Views.Pages"
+      xmlns:vm="clr-namespace:ECS.Core.ViewModels.Viewer;assembly=ECS.Core"
+      mc:Ignorable="d" 
+    d:DesignHeight="980" d:DesignWidth="1690"
+      Title="OutManageScreen"
+      DataContext="{StaticResource ViewModel.OutManage}">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="7" Background="#FFF2F2F2">
+            <DockPanel>
+                <!--좌측-->
+                <StackPanel Orientation="Horizontal" Margin="5 4 5 4" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <!--기간-->
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="기간 :" 
+                                   HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" Padding="4"
+                                   FontSize="23" Width="70" Height="45"/>
+                            <DatePicker Name="Begin" SelectedDate="{Binding Begin}" Style="{StaticResource DatePickerIconResizingStyle}"
+                                    RenderTransformOrigin="0.5,1" Margin="0 0 0 0"
+                                    FontSize="23" Width="200" Height="45"/>
+                            <TextBlock Text="~ " 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Padding="2"
+                                   FontSize="25" Width="70" Height="45"/>
+                            <DatePicker Name="End" SelectedDate="{Binding End}" Style="{StaticResource DatePickerIconResizingStyle}"
+                                    RenderTransformOrigin="0.5,1" Margin="0 0 0 0"
+                                    FontSize="23" Width="200" Height="45"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 6 0 0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="식별 :"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Right"  Padding="2"
+                                           FontSize="23" Width="70" Height="45"/>
+                                <ComboBox SelectedItem="{Binding BcrFilter}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                          FontSize="23" FontFamily="{StaticResource Font.Common}" Width="200" Height="45">
+                                    <sys:String>전체</sys:String>
+                                    <sys:String>미식별</sys:String>
+                                    <sys:String>식별</sys:String>
+                                </ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <!--검색 조건-->
+                    <StackPanel Margin="20 0 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Text="{Binding WaveNo}" KeyDown="SearchKeyDown"
+                             HorizontalAlignment="Center"  VerticalAlignment="Center"
+                             FontSize="23" Width="180" Height="45">
+                                <TextBox.Style>
+                                    <Style TargetType="TextBox">
+                                        <Setter Property="FontFamily" Value="{StaticResource Font.Common}"/>
+                                        <Style.Resources>
+                                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                                <VisualBrush.Visual>
+                                                    <TextBlock Text="웨이브번호" Foreground="{DynamicResource Brush.LightGray}" FontWeight="Bold" FontSize="23" />
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Style.Resources>
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="">
+                                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                                <Setter Property="Background" Value="White" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                            <TextBox Text="{Binding BoxId}" KeyDown="SearchKeyDown"
+                             HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10 0 0 0"
+                             FontSize="23" Width="180" Height="45">
+                                <TextBox.Style>
+                                    <Style TargetType="TextBox">
+                                        <Setter Property="FontFamily" Value="{StaticResource Font.Common}"/>
+                                        <Style.Resources>
+                                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                                <VisualBrush.Visual>
+                                                    <TextBlock Text="박스ID" Foreground="{DynamicResource Brush.LightGray}" FontWeight="Bold" FontSize="23" />
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Style.Resources>
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="">
+                                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                                <Setter Property="Background" Value="White" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                            <TextBox Text="{Binding CstOrdNo}" KeyDown="SearchKeyDown"
+                             HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10 0 0 0"
+                             FontSize="23" Width="250" Height="45">
+                                <TextBox.Style>
+                                    <Style TargetType="TextBox">
+                                        <Setter Property="FontFamily" Value="{StaticResource Font.Common}"/>
+                                        <Style.Resources>
+                                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                                <VisualBrush.Visual>
+                                                    <TextBlock Text="고객 주문번호" Foreground="{DynamicResource Brush.LightGray}" FontWeight="Bold" FontSize="23" />
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Style.Resources>
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="">
+                                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                                <Setter Property="Background" Value="White" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 6 0 0">
+                            <TextBox Text="{Binding CstCd}" KeyDown="SearchKeyDown"
+                             HorizontalAlignment="Center"  VerticalAlignment="Center"
+                             FontSize="23" Width="180" Height="45">
+                                <TextBox.Style>
+                                    <Style TargetType="TextBox">
+                                        <Setter Property="FontFamily" Value="{StaticResource Font.Common}"/>
+                                        <Style.Resources>
+                                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                                <VisualBrush.Visual>
+                                                    <TextBlock Text="고객코드" Foreground="{DynamicResource Brush.LightGray}" FontWeight="Bold" FontSize="23" />
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Style.Resources>
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="">
+                                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                                <Setter Property="Background" Value="White" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                            <TextBox Text="{Binding InvoiceId}" KeyDown="SearchKeyDown"
+                             HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10 0 0 0"
+                             FontSize="23" Width="180" Height="45">
+                                <TextBox.Style>
+                                    <Style TargetType="TextBox">
+                                        <Setter Property="FontFamily" Value="{StaticResource Font.Common}"/>
+                                        <Style.Resources>
+                                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                                <VisualBrush.Visual>
+                                                    <TextBlock Text="송장번호" Foreground="{DynamicResource Brush.LightGray}" FontWeight="Bold" FontSize="23" />
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Style.Resources>
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="">
+                                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                                <Setter Property="Background" Value="White" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <!--우측-->
+                <StackPanel Orientation="Horizontal"  Margin="5 4 5 4" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <!--페이지-->
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Page : "
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Right" Padding="1"
+                                       FontSize="23" Width="110" Height="45" />
+                                <TextBox Text="{Binding Page}" KeyDown="PageKeyDown"
+                                     HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"
+                                     FontSize="23" Height="45" Width="80"/>
+                                <TextBlock Text=" / " 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Padding="1"
+                                       FontSize="23" Width="20" Height="45"/>
+                                <TextBlock Text="{Binding MaxPage}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Padding="1"
+                                       FontSize="23" Height="45" Width="80"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 6 0 0">
+                                <TextBlock Text="항목 수 : "
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Right"  Padding="1"
+                                           FontSize="23" Width="110" Height="45"/>
+                                <ComboBox SelectedItem="{Binding PageSize}" SelectedIndex="0"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          FontSize="23" FontFamily="{StaticResource Font.Common}" Height="45" Width="180">
+                                    <sys:Int32>
+                                        25
+                                    </sys:Int32>
+                                    <sys:Int32>
+                                        50
+                                    </sys:Int32>
+                                    <sys:Int32>
+                                        100
+                                    </sys:Int32>
+                                </ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Margin="6 0 0 0">
+                            <Button Click="PageLeftButtonClick" Style="{StaticResource Style.Button.Up}"
+                                    Width="46" Height="46"/>
+                            <Button Click="PageRightButtonClick" Style="{StaticResource Style.Button.Down}"
+                                    Margin="0 6 0 0"
+                                    Width="46" Height="46"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <!--검색/액셀-->
+                    <StackPanel Margin="6 0 0 0">
+                        <Button Click="SearchClick" 
+                                Width="65" Height="46">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/ECS.Viewer;component/Images/Icon_Search.png"/>
+                            </Button.Background>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border x:Name="border" BorderBrush="{StaticResource Brush.DarkGray}" BorderThickness="1" Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Click="ExportClick"
+                                Margin="0 6 0 0"
+                                Width="65" Height="46" >
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Images/Excel.png" Stretch="Uniform"/>
+                            </Button.Background>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border x:Name="border" BorderBrush="{StaticResource Brush.DarkGray}" BorderThickness="1" Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <Border Margin="7,10" Grid.Row="1" BorderThickness="0" BorderBrush="{StaticResource Brush.LightGray}">
+            <DataGrid Style="{StaticResource Style.DataGrid.Common}" FontSize="20" ItemsSource="{Binding OutBcrList, IsAsync=True}" VerticalScrollBarVisibility="Auto"
+                      EnableColumnVirtualization="True" EnableRowVirtualization="True" MaxWidth="2560" MaxHeight="1600">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="82"  Header="No"           Binding="{Binding NO}"/>
+                    <DataGridTextColumn Width="105"  Header="창고 코드"     Binding="{Binding WH_ID}"/>
+                    <DataGridTextColumn Width="220" Header="출고 일시"     Binding="{Binding OUT_TIME}"/>
+                    <DataGridTextColumn Width="120" Header="웨이브 번호"   Binding="{Binding WAVE_NO}"/>
+                    <DataGridTextColumn Width="120" Header="고객 코드"     Binding="{Binding CST_CD}"/>
+                    <DataGridTextColumn Width="220" Header="고객 주문번호" Binding="{Binding CST_ORD_NO}"/>
+                    <DataGridTextColumn Width="120" Header="박스 유형"      Binding="{Binding BOX_TYPE_CD}"/>
+                    <DataGridTextColumn Width="150" Header="박스ID"        Binding="{Binding BOX_ID}"/>
+                    <DataGridTextColumn Width="180" Header="송장번호"       Binding="{Binding INVOICE_ID}"/>
+                    <DataGridTextColumn Width="120" Header="분기 결과"      Binding="{Binding LINE}"/>
+                    <DataGridTextColumn Width="220" Header="중량 검수 일시" Binding="{Binding WEIGHT_TIME}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>

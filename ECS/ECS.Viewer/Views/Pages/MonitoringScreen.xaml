@@ -1,0 +1,219 @@
+﻿<Page x:Class="ECS.Viewer.Views.Pages.MonitoringScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:sys ="clr-namespace:System;assembly=mscorlib"
+      d:DesignHeight="980" d:DesignWidth="1690"
+      xmlns:local="clr-namespace:ECS.Viewer.Views.Pages" xmlns:controls="clr-namespace:ECS.Viewer.Views.Controls"
+      xmlns:vm="clr-namespace:ECS.Core.ViewModels.Viewer;assembly=ECS.Core"
+      DataContext="{StaticResource ViewModel.Counting}" Unloaded="Page_Unloaded"
+      mc:Ignorable="d" 
+      Title="MonitoringScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="TodayDate" Grid.Row="0" Grid.Column="2" Text="2021.09.09" HorizontalAlignment="Right" Margin="0,0,30,0" FontSize="30" TextAlignment="Right" VerticalAlignment="Center"/>
+        <Border Grid.Row="1" Grid.Column="0" Margin="15" CornerRadius="3" BorderThickness="5" BorderBrush="#FF007DC3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="40*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.ColumnSpan="2" Foreground="White" Text="일별 오더 현황" TextAlignment="Center" FontSize="25" Background="#FF007DC3" Margin="-1 0" Height="40"/>
+                <WindowsFormsHost Grid.Row="1" Grid.ColumnSpan="2" x:Name="dailyOrderChart" Foreground="{x:Null}" Margin="10,12,10,10">
+                    <controls:SimpleChart x:Name="OrderChart"/>
+                </WindowsFormsHost>
+                <StackPanel  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" Margin="0,3,20,0"
+                             >
+                    <TextBlock  Text="당일 오더 수량 : " 
+                            TextAlignment="Right"  Foreground="#FF545557"
+                            FontSize="24"/>
+                    <TextBlock x:Name="TodayOrderCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+                <!--<Image x:Name="image" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="73" Margin="164,0,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100"/>-->
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Margin="15" CornerRadius="3" BorderThickness="5" BorderBrush="#FF007DC3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="254*"/>
+                    <ColumnDefinition Width="261*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Foreground="White" Text="Reject 현황" TextAlignment="Center" FontSize="25" Margin="-1 0" Background="#FF007DC3" Height="40" />
+                <StackPanel  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             >
+                    <TextBlock  Text="제함 리젝 수량 : " 
+                            TextAlignment="Right"  Foreground="#FF545557"
+                            FontSize="24"/>
+                    <TextBlock x:Name="TodayCaseErectRejectCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+                <StackPanel  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             >
+                    <TextBlock  Text="중량 리젝 수량 : " 
+                            TextAlignment="Right"  Foreground="#FF545557"
+                            FontSize="24"/>
+                    <TextBlock x:Name="TodayWeightRejectCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+                <StackPanel  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             >
+                    <TextBlock  Text="충진 리젝 수량 : " 
+                            TextAlignment="Right"  Foreground="#FF545557"
+                            FontSize="24"/>
+                    <TextBlock x:Name="TodaySmartPackingRejectCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+                <StackPanel  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             >
+                    <TextBlock  Text="상면 리젝 수량 : " 
+                            TextAlignment="Right"  Foreground="#FF545557"
+                            FontSize="24"/>
+                    <TextBlock x:Name="TodayTopRejectCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2" Margin="15" CornerRadius="3" BorderThickness="5" BorderBrush="{StaticResource Brush.CjBlue}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="40*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Foreground="White" Text="시간당 출하량" TextAlignment="Center" FontSize="25" Background="{StaticResource Brush.CjBlue}" VerticalAlignment="Top" Grid.RowSpan="2" Margin="-1 0" Height="40"/>
+                <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             >
+                    <TextBlock  Text="현재 시각 출하량 : " 
+                            TextAlignment="Right"  Foreground="{StaticResource Brush.DarkGray}"
+                            FontSize="24"/>
+                    <TextBlock x:Name="HourlyOutCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border  Grid.Row="2" Grid.Column="0" Margin="15" CornerRadius="3" BorderThickness="5" BorderBrush="{StaticResource Brush.CjRed}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="40*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.ColumnSpan="2" Foreground="White" Text="전일 미출고 현황" TextAlignment="Center" FontSize="25" Background="{StaticResource Brush.CjRed}" VerticalAlignment="Top" Margin="-1 0" Height="40"/>
+                <WindowsFormsHost Grid.Row="1" Grid.ColumnSpan="2" x:Name="yesterdayNotOutChart" Foreground="{x:Null}" Margin="10"/>
+                <StackPanel  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" Margin="0,3,20,0"
+                             >
+                    <TextBlock  Text="전일 미출하량 : " 
+                            TextAlignment="Right"  Foreground="#FF545557"
+                            FontSize="24"/>
+                    <TextBlock x:Name="NonOutCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border  Grid.Row="2" Grid.Column="1" Margin="15" CornerRadius="3" BorderThickness="5" BorderBrush="{StaticResource Brush.CjRed}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="40*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.ColumnSpan="2" Foreground="White" Text="금일 출고 현황" TextAlignment="Center" FontSize="25" Background="{StaticResource Brush.CjRed}" Grid.RowSpan="2" VerticalAlignment="Top" Margin="-1 0" Height="40"/>
+                <WindowsFormsHost Grid.Row="1" Grid.ColumnSpan="2" x:Name="todayOutChart" Foreground="{x:Null}" Margin="10"/>
+                <StackPanel  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" Margin="0,3,20,0"
+                             >
+                    <TextBlock  Text="금일 총 출하량 : " 
+                            TextAlignment="Right"  Foreground="#FF545557"
+                            FontSize="24"/>
+                    <TextBlock x:Name="TodayOutCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border  Grid.Row="2" Grid.Column="2" Margin="15" CornerRadius="3" BorderThickness="5" BorderBrush="{StaticResource Brush.CjYellow}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="40*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.ColumnSpan="2" Foreground="White" Text="누적 현황(Total)" TextAlignment="Center" FontSize="25" Background="{StaticResource Brush.CjYellow}" VerticalAlignment="Top" Margin="-1 0" Height="40"/>
+                <WindowsFormsHost Grid.Row="1" Grid.ColumnSpan="2" x:Name="totalOutChart" Foreground="{x:Null}" Margin="10"/>
+                <StackPanel  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                             HorizontalAlignment="Center" Margin="0,3,20,0"
+                             >
+                    <TextBlock  Text="전체 누적 출하량 : " 
+                            TextAlignment="Right"  Foreground="#FF545557"
+                            FontSize="24"/>
+                    <TextBlock x:Name="TotalOutCount" Text="0"
+                               HorizontalAlignment="Left" 
+                               FontSize="24"/>
+                    <TextBlock Text="EA" FontSize="24" TextAlignment="Left" Width="50"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

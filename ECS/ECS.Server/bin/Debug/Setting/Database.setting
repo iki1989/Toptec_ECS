@@ -1,0 +1,9 @@
+{
+  "SqlConnectionStringBuilder": {
+    "Data Source": "DESKTOP-1P4AHF0",
+    "Initial Catalog": "ECS",
+    "User ID": "ecsuser",
+    "Password": "1",
+    "Integrated Security": "True"
+  }
+}

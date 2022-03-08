@@ -1,0 +1,38 @@
+﻿<Window x:Class="ECS.Touch.CV_Popup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ECS.Touch"
+        mc:Ignorable="d"
+        Title="CV_Popup" Height="557" Width="716" WindowStyle="None">
+    <StackPanel Margin="0" Width="708" Height="549" >
+        <StackPanel Height="38" >
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/MainBackground1.png"/>
+            </StackPanel.Background>
+            <Button x:Name="button3" Content="" Width="18" Height="18" BorderBrush="{x:Null}" BorderThickness="0" HorizontalAlignment="Right" Margin="0,10,10,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/btn_close_18x18.png"/>
+                </Button.Background>
+            </Button>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="수동 검증" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,-21,0,0" FontSize="16" FontFamily="/ECS.Touch;component/Font/#Noto Sans CJK KR Black"/>
+        </StackPanel>
+        <StackPanel Height="45" Grid.ColumnSpan="2" Margin="50,25,50,0" >
+            <StackPanel Height="45" HorizontalAlignment="Left" Width="598">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="잉크젯 C/V # 하부 속도" HorizontalAlignment="Left" FontSize="30" FontFamily="/ECS.Touch;component/Font/#Noto Sans CJK KR Black" Margin="0" Foreground="#FF007DC3"/>
+            </StackPanel>
+            <StackPanel Height="45" Margin="114,-45,0,0"/>
+        </StackPanel>
+        <Border BorderBrush="#FFBEC0C2" BorderThickness="1" Margin="50,25,50,0">
+            <StackPanel Height="336" Margin="0" Grid.ColumnSpan="2">
+                <StackPanel Margin="20" Width="566" Height="296" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Height="75" Grid.ColumnSpan="2">
+            <Button x:Name="button1" Content="저장" Width="100" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,120,0" Background="White" BorderBrush="#FF007DC3" Foreground="#FF007DC3" FontFamily="/ECS.Touch;component/Font/#Noto Sans CJK KR Black" FontSize="15"/>
+            <Button x:Name="button2" Content="닫기" Width="100" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="120,-40,0,0" BorderBrush="#FF77787B" Background="White" FontFamily="/ECS.Touch;component/Font/#Noto Sans CJK KR Black" FontSize="15" Foreground="#FF77787B"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

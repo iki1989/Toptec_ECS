@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5ECCCC44-F2E8-4B76-8136-2ADA4BC11B41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECS.Model</RootNamespace>
+    <AssemblyName>ECS.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.v3, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\SmartCode.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http">
+      <HintPath>Library\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Databases\CanceledInvoice.cs" />
+    <Compile Include="Domain\IReaderConvertable.cs" />
+    <Compile Include="Domain\Touch\SmartPackingData.cs" />
+    <Compile Include="Domain\Touch\TouchParam.cs" />
+    <Compile Include="Domain\Viewer\SmartPackingRejectData.cs" />
+    <Compile Include="Organize.cs" />
+    <Compile Include="Pcs\SmartPackingMessage.cs" />
+    <Compile Include="Pcs\WeightInvoiceConveyorData.cs" />
+    <Compile Include="Plc\ConveyorSpeedEnum.cs" />
+    <Compile Include="Plc\BcrResult.cs" />
+    <Compile Include="Plc\PlcSmartPackingIoHandler.cs" />
+    <Compile Include="Plc\UserDefinedIoValues.cs" />
+    <Compile Include="ProductInfo.cs" />
+    <Compile Include="Bcr\TopBcrStandardFormat.cs" />
+    <Compile Include="Controls\EcsViewerMenuSubItem.cs" />
+    <Compile Include="Databases\MappingDefinition.cs" />
+    <Compile Include="Databases\WcsApis.cs" />
+    <Compile Include="Databases\WcsFormat.cs" />
+    <Compile Include="Domain\Touch\BcrReadData.cs" />
+    <Compile Include="Domain\Touch\BoxInfoData.cs" />
+    <Compile Include="Domain\Touch\CaseErectData.cs" />
+    <Compile Include="Domain\Touch\SkuData.cs" />
+    <Compile Include="Domain\Touch\WeightCheckData.cs" />
+    <Compile Include="Domain\Touch\InvoiceData.cs" />
+    <Compile Include="Domain\Touch\InvoicePrintData.cs" />
+    <Compile Include="Domain\Touch\InvoiceReprintData.cs" />
+    <Compile Include="Domain\Ricp\RicpCommon.cs" />
+    <Compile Include="Domain\Wcs\FromWcs.cs" />
+    <Compile Include="Domain\Wcs\ToWcs.cs" />
+    <Compile Include="Domain\Wcs\WcsCommon.cs" />
+    <Compile Include="DynamicScales\TLW150DataFormat.cs" />
+    <Compile Include="EcsAppDirectory.cs" />
+    <Compile Include="EcsSettingFile.cs" />
+    <Compile Include="HubServiceName.cs" />
+    <Compile Include="Hub\EquipmentEventArgs.cs" />
+    <Compile Include="IDrive.cs" />
+    <Compile Include="Inkject\CounterInfo.cs" />
+    <Compile Include="Inkject\Enums.cs" />
+    <Compile Include="Inkject\InkjectBcrReadArg.cs" />
+    <Compile Include="Inkject\InkjectOrderType.cs" />
+    <Compile Include="LabelPrinter\LabelBoxInfo.cs" />
+    <Compile Include="LabelPrinter\LabelErrorEnum.cs" />
+    <Compile Include="LabelPrinter\HostStatusReturnArg.cs" />
+    <Compile Include="LocationStatusEnum.cs" />
+    <Compile Include="Pcs\CaseErectConveyorData.cs" />
+    <Compile Include="Pcs\CommonMessages.cs" />
+    <Compile Include="Pcs\InvoiceReprintMessages.cs" />
+    <Compile Include="Pcs\InvoiceBcrMessages.cs" />
+    <Compile Include="Pcs\ConveyorMessages.cs" />
+    <Compile Include="Pcs\WeightCheckMessages.cs" />
+    <Compile Include="PingTcpCommunicatorSetting.cs" />
+    <Compile Include="Plc\EquipmentState.cs" />
+    <Compile Include="Plc\PlcWeightInvoiceIoHandler.cs" />
+    <Compile Include="Plc\PlcCaseErectIoHandler.cs" />
+    <Compile Include="Plc\PlcPickingIoHandler.cs" />
+    <Compile Include="Plc\PlcGeneralIoHandler.cs" />
+    <Compile Include="Restfuls\RicpResponse.cs" />
+    <Compile Include="Restfuls\RicpFormat.cs" />
+    <Compile Include="Restfuls\FromRicpRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restfuls\FromWcsRequest.cs" />
+    <Compile Include="Restfuls\ToSprialRequest.cs" />
+    <Compile Include="Restfuls\WcsFormat.cs" />
+    <Compile Include="Restfuls\ToRicpRequest.cs" />
+    <Compile Include="Restfuls\ErrorCode.cs" />
+    <Compile Include="Restfuls\ToWcsRequest.cs" />
+    <Compile Include="Restfuls\SpiralResponse.cs" />
+    <Compile Include="Restfuls\WcsResponse.cs" />
+    <Compile Include="Pcs\CaseErectMessages.cs" />
+    <Compile Include="Pcs\PcMessageFrame.cs" />
+    <Compile Include="Stuck.cs" />
+    <Compile Include="TimeBox.cs" />
+    <Compile Include="TowerLampEnum.cs" />
+    <Compile Include="Domain\Viewer\HourlyCountingContentData.cs" />
+    <Compile Include="Domain\Viewer\DailyCountingData.cs" />
+    <Compile Include="Domain\Viewer\HourlyCountingData.cs" />
+    <Compile Include="Domain\Viewer\CountingData.cs" />
+    <Compile Include="Domain\Viewer\TrackingContentData.cs" />
+    <Compile Include="Domain\Viewer\TrackingData.cs" />
+    <Compile Include="Domain\Viewer\OutBcrData.cs" />
+    <Compile Include="Domain\Viewer\InvoiceRejectData.cs" />
+    <Compile Include="Domain\Viewer\OrderSearchData.cs" />
+    <Compile Include="Domain\Viewer\SearchParam.cs" />
+    <Compile Include="Domain\Viewer\WeightRejectData.cs" />
+    <Compile Include="WebService\WebServicePath.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Library\SmartBuilder.v3.exe.config" />
+    <None Include="Library\SmartCode.LicenseReader.v3.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Library\BXLLAPI.dll" />
+    <Content Include="Library\BXLLAPI_x64.dll" />
+    <Content Include="Library\MaterialDesignColors.dll" />
+    <Content Include="Library\MaterialDesignThemes.Wpf.dll" />
+    <Content Include="Library\Newtonsoft.Json.dll" />
+    <Content Include="Library\Secl.v3.dll" />
+    <Content Include="Library\SmartBuilder.v3.exe" />
+    <Content Include="Library\SmartCode.LicenseReader.v3.exe" />
+    <Content Include="Library\SmartCode.v3.dll" />
+    <Content Include="Library\SmartCode.Wpf.v3.dll" />
+    <Content Include="Library\System.Data.SQLite.dll" />
+    <Content Include="Library\System.Web.Http.dll" />
+    <Content Include="Library\x64\SQLite.Interop.dll" />
+    <Content Include="Library\x86\SQLite.Interop.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

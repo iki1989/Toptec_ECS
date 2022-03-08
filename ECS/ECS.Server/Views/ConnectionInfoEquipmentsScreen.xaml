@@ -1,0 +1,26 @@
+﻿<Page x:Class="ECS.Server.Views.ConnectionInfoEquipmentsScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:ECS.Core.ViewModels.Server;assembly=ECS.Core"
+      xmlns:local="clr-namespace:ECS.Server.Views"
+      mc:Ignorable="d" 
+      Title="ConnectionInfoEquipmentsScreen"
+      Loaded="Page_Loaded"
+      Unloaded="Page_Unloaded">
+    <Page.DataContext>
+        <vm:ConnectionInfoEquipmentsModel/>
+    </Page.DataContext>
+    <DataGrid x:Name="dataGrid" IsEnabled="False" IsReadOnly="True" CanUserSortColumns="False" AutoGenerateColumns="False"  ItemsSource="{Binding EquipmentConnectonInfos, UpdateSourceTrigger=PropertyChanged}">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="No" Width="Auto" Binding="{Binding No}"/>
+            <DataGridTextColumn Header="ID" Width="Auto" Binding="{Binding Id}"/>
+            <DataGridTextColumn Header="이름" Width="Auto" Binding="{Binding Name}"/>
+            <DataGridTextColumn Header="IP" Width="Auto" Binding="{Binding Ip}"/>
+            <DataGridTextColumn Header="Port" Width="Auto" Binding="{Binding Port}"/>
+            <DataGridTextColumn Header="Active" Width="Auto" Binding="{Binding Active}"/>
+            <DataGridTextColumn Header="연결상태" Width="*" Binding="{Binding IsConnected}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+</Page>

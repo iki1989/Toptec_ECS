@@ -1,0 +1,20 @@
+﻿ECS.Viewer
+
+
+winexe
+C#
+.cs
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Viewer\obj\Debug\
+ECS.Viewer
+none
+false
+DEBUG;TRACE
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Viewer\App.xaml
+12-1421565260
+3-880724430
+17-285853070
+26-170758632
+MainWindow.xaml;Views\Controls\EcsViewerMenuItem.xaml;Views\Pages\SmartPackingRejectScreen.xaml;Views\Pages\InvoiceRejectScreen.xaml;Views\Pages\MainScreen.xaml;Views\Pages\MonitoringScreen.xaml;Views\Pages\OrderSearchScreen.xaml;Views\Pages\OutChartScreen.xaml;Views\Pages\OutManageScreen.xaml;Views\Pages\TrackingLogSearchScreen.xaml;Views\Pages\TrackingSearchScreen.xaml;Views\Pages\WeightRejectScreen.xaml;
+
+False
+

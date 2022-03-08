@@ -1,0 +1,20 @@
+﻿ECS.Server
+
+
+winexe
+C#
+.cs
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Server\obj\Debug\
+ECS.Server
+none
+false
+DEBUG;TRACE
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Server\App.xaml
+10162335434
+258816407
+15235725588
+26-1076841187
+MainWindow.xaml;Views\AppSettingScreen.xaml;Views\ConnectionInfoDatabaseScreen.xaml;Views\ConnectionInfoEquipmentsScreen.xaml;Views\ConnectionInfoRicpRestfulScreen.xaml;Views\ConnectionInfoSpiralRestfulScreen.xaml;Views\ConnectionInfoWcsRestfulScreen.xaml;Views\ConnectionInfoWebServiceScreen.xaml;Views\MonitoringPlcIoScreen.xaml;Views\WcsForcePostScreen.xaml;
+
+False
+

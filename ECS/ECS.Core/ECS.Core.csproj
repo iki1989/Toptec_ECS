@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B20E9279-2C4E-411D-976A-825DA113D1D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECS.Core</RootNamespace>
+    <AssemblyName>ECS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ECS.Model\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Secl.v3">
+      <HintPath>..\ECS.Model\Library\Secl.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.v3">
+      <HintPath>..\ECS.Model\Library\SmartCode.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.Wpf.v3">
+      <HintPath>..\ECS.Model\Library\SmartCode.Wpf.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache.cs" />
+    <Compile Include="Communicators\TopAndSideBcrCommunicator.cs" />
+    <Compile Include="Communicators\BixolonSlpD420\BXLLApi.cs" />
+    <Compile Include="Communicators\BixolonSlpD420\BXLLApi_x64.cs" />
+    <Compile Include="Communicators\BixolonSlpD420\BXLLApi_x86.cs" />
+    <Compile Include="Communicators\LabelPrinter_BixolonSlpD420Communicator.cs" />
+    <Compile Include="Communicators\BcrCommunicator.cs" />
+    <Compile Include="Communicators\DynamicScale_TLW150Communicator.cs" />
+    <Compile Include="Communicators\LabelPrinter_ZebraZe500_4Communicator.cs" />
+    <Compile Include="Communicators\LabelPrinter_ZebraZt411Communicator.cs" />
+    <Compile Include="Equipments\LabelPrinterZebraZe500Equipment.cs" />
+    <Compile Include="Equipments\LabelPrinterZebraZt411Equipment.cs" />
+    <Compile Include="Equipments\LogicalEquipment.cs" />
+    <Compile Include="Equipments\PlcSmartPackingEquipment.cs" />
+    <Compile Include="Equipments\TouchPcGeneralEquipment.cs" />
+    <Compile Include="Equipments\PlcWeightInvoiceEquipment.cs" />
+    <Compile Include="Equipments\PlcCaseErectEquipment.cs" />
+    <Compile Include="Equipments\PlcPickingEquipment.cs" />
+    <Compile Include="Equipments\TopBcrEquipment.cs" />
+    <Compile Include="Equipments\ServerPcEquipment.cs" />
+    <Compile Include="Equipments\TouchPcConveyorEquipment.cs" />
+    <Compile Include="Equipments\TouchPcSmartPackingEquipment.cs" />
+    <Compile Include="Equipments\TouchPcWeightInspectorEquipment.cs" />
+    <Compile Include="Equipments\TouchPcInvoiceRejectEquipment.cs" />
+    <Compile Include="Equipments\TouchPcCaseErectEquipment.cs" />
+    <Compile Include="Managers\EcsTouchAppManager.cs" />
+    <Compile Include="Managers\DataBaseManagerForViewer.cs" />
+    <Compile Include="Managers\EcsServerAppManager.cs" />
+    <Compile Include="Equipments\OutLogicalEquipment.cs" />
+    <Compile Include="Equipments\RouteLogicalEquipment.cs" />
+    <Compile Include="Hub.cs" />
+    <Compile Include="Managers\DataBaseManagerForServer.cs" />
+    <Compile Include="Managers\DataBaseManagerForTouch.cs" />
+    <Compile Include="Equipments\DynamicScaleEquipment.cs" />
+    <Compile Include="Equipments\Equipment.cs" />
+    <Compile Include="Equipments\InkjectEquipment.cs" />
+    <Compile Include="Equipments\LabelPrinterBixolonEquipment.cs" />
+    <Compile Include="Equipments\PlcGeneralEquipment.cs" />
+    <Compile Include="Equipments\TouchPcBcrLcdEquipment.cs" />
+    <Compile Include="Managers\EcsViewerAppManager.cs" />
+    <Compile Include="Managers\RestfulRequsetManager.cs" />
+    <Compile Include="Managers\RestfulRequsetSpiralManager.cs" />
+    <Compile Include="Managers\RestfulRequsetWcsManager.cs" />
+    <Compile Include="Managers\RestfulRequsetRicpManager.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Restful\RestfulSpiralRequester.cs" />
+    <Compile Include="TimeBoxQueue.cs" />
+    <Compile Include="Util\CsvFile.cs" />
+    <Compile Include="Util\ObjectExtension.cs" />
+    <Compile Include="Util\PingTest.cs" />
+    <Compile Include="Util\Scale.cs" />
+    <Compile Include="Util\SecurityHelper.cs" />
+    <Compile Include="Util\SharpTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Util\EcsSplashScreen.cs" />
+    <Compile Include="Util\SYSTEMTIME.cs" />
+    <Compile Include="ViewModels\PagingList.cs" />
+    <Compile Include="ViewModels\Server\AppSettingViewModel.cs" />
+    <Compile Include="ViewModels\Server\ConnectionInfoDatabaseViewModel.cs" />
+    <Compile Include="ViewModels\Server\ConnectionInfoEquipmentsModel.cs" />
+    <Compile Include="ViewModels\Server\ConnectionInfoSpiralRestfulViewModel.cs" />
+    <Compile Include="ViewModels\Server\ConnectionInfoWcsRestfulViewModel.cs" />
+    <Compile Include="ViewModels\Server\ConnectionInfoRicpRestfulViewModel.cs" />
+    <Compile Include="ViewModels\Server\ConnectionInfoWebServiceViewModel.cs" />
+    <Compile Include="ViewModels\Server\WcsForcePostViewModel.cs" />
+    <Compile Include="ViewModels\SwitchMultiConverter.cs" />
+    <Compile Include="ViewModels\Touch\SmartPackingViewModel.cs" />
+    <Compile Include="ViewModels\Touch\ConveyorViewModel.cs" />
+    <Compile Include="ViewModels\Touch\CaseErectViewModel.cs" />
+    <Compile Include="ViewModels\Touch\EcsTouchViewModel.cs" />
+    <Compile Include="ViewModels\Touch\InvoiceRejectViewModel.cs" />
+    <Compile Include="ViewModels\Touch\WeightInspectorViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\EcsViewerViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\CountingViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\SmartPackingRejectViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\SearchPageViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\TrackingLogSearchViewModel.cs" />
+    <Compile Include="WebServices\CustomWebServiceHost.cs" />
+    <Compile Include="Managers\DataBaseManager.cs" />
+    <Compile Include="Restful\RestfulWcsRequester.cs" />
+    <Compile Include="Restful\RestfulRicpRequester.cs" />
+    <Compile Include="Equipments\PcEquipment.cs" />
+    <Compile Include="ViewModels\Notifier.cs" />
+    <Compile Include="ViewModels\Touch\BcrLcdViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\InvoiceRejectViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\MainViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\OrderSearchViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\OutManageViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\TrackingSearchViewModel.cs" />
+    <Compile Include="ViewModels\Viewer\WeightRejectViewModel.cs" />
+    <Compile Include="WebServices\BaseService.cs" />
+    <Compile Include="WebServices\DefaultRestfulServerService.cs" />
+    <Compile Include="WebServices\RicpRestfulServerService.cs" />
+    <Compile Include="WebServices\WcsRestfulServerService.cs" />
+    <Compile Include="WebServices\IWebServices.cs" />
+    <Compile Include="Managers\WebServiceManager.cs" />
+    <Compile Include="Communicators\Inkject_Copilot500Communicator.cs" />
+    <Compile Include="Restful\RestfulRequester.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\circle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECS.Model\ECS.Model.csproj">
+      <Project>{5ecccc44-f2e8-4b76-8136-2ada4bc11b41}</Project>
+      <Name>ECS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

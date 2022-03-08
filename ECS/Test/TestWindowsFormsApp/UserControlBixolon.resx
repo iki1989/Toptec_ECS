@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBoxText.Text" xml:space="preserve">
+    <value>^XA ^PON ^PW1300 ^LH30,0 ^SEE:UHANGUL.DAT^FS ^CWQ,E:KFONT3.FNT^FS ^CI26  ^FT30,1300^FR^AQB,50,50^FD5555-7685-2142^FS ^FT30,800^FR^AQB,50,50^FD2021-09-08^FS ^FT30,300^FR^AQB,50,50^FD ^FS ^FO50,1060^BY5^BCB,220,N,N,N,A^FD8L29^FS  ^FT250,1050^FR^AQB,160,160^FD8^FS ^FT260,1040^GB0,90,6^FS  ^FT250,900^FR^AQB,240,220^FDL29^FS  ^FT250,500^FR^AQB,180,120^FD-^FS ^FT250,400^FR^AQB,160,120^FD9^FS  ^FT320,1420^FR^AQB,40,40^FD정미나 0503-6512-4273/^FS  ^FO280,100^BY5^BCB,50,N,N,N,A^FD555576852142^FS  ^FT360,1420^FR^AQB,40,40^FD전라남도 여수시 선원동^FS ^FT400,1420^FR^AQB,40,40^FD1341번지 우미이노스빌 205동 1305호^FS ^FT440,1420^FR^AQB,40,40^FD  ^FS ^FT500,1420^FR^AQB,70,70^FD우미이노스빌 205동 1305호^FS  ^FT540,1420^FR^AQB,40,40^FD프롬바이오 (02-1588-8474)^FS ^FT540,550^FR^AQB,40,40^FD1^FS ^FT540,300^FR^AQB,40,40^FD0^FS ^FT540,120^FR^AQB,40,40^FD신용^FS   ^FT580,1420^FR^AQB,40,40^FD경기도 군포시^FS  ^FT625,1420^FR^AQB,40,40^FD주문자명 / ^FS ^FT665,1420^FR^AQB,40,40^FD주문번호 ^FS   ^FT725,1420^FR^AQB,40,40^FD[8809685970958] 프리미엄 쇼핑백 (소)^FS ^FT725,450^FR^AQB,40,40^FD[수량 :       1]^FS ^FT765,1420^FR^AQB,40,40^FD[8809685970200] 위건강엔 매스틱 15포x2개입(30포)^FS ^FT765,450^FR^AQB,40,40^FD[수량 :       5]^FS   ^FT925,1420^FR^AQB,40,40^FD ^FS  ^FT925,450^FR^AQB,40,40^FD[총 수량 :    6 ]^FS ^FT965,1420^FR^AQB,40,40^FD25669^FS  ^FT1010,1440^FR^AQB,40,40^FD우미이노스빌 205동 1305호^FS   ^FT1090,1440^AQB,40,40^FB1015,2,,^FD배송 전에 미리 연락 바랍니다.^FS ^FT1112,1440^AQB,40,40^FB1015,2,,^FD^FS  ^FT1135,1440^FR^AQB,40,40^FD전남여수선원_양시현_S07^FS ^FT1135,900^FR^AQB,40,40^FD0^FS  ^FT1135,650^FR^AQB,40,40^FD신용^FS ^FO990,80^BY4^BCB,120,Y,N,N^FD&gt;;555576852142^FS     ^XZ</value>
+  </data>
+</root>

@@ -1,0 +1,54 @@
+{
+  "PcEquipmenttSetting": {
+    "CommunicatorSetting": {
+      "Name": "Hsms Communicator",
+      "Port": 9000,
+      "DeviceId": 1,
+      "ReplyTimeoutSeconds": 45,
+      "ControlTransactionTimeoutSeconds": 5,
+      "NotSelectedTimeoutSeconds": 10,
+      "LinktestIntervalSeconds": 30,
+      "SeparateTraceLog": true,
+      "Ip": "127.0.0.1",
+      "Active": false,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 0,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "Id": null,
+    "Name": "Hsms"
+  },
+  "LabelPrinterZebraEquipmentSetting": {
+    "CommunicatorSetting": {
+      "Name": "Zebra ZT411",
+      "Ip": "192.168.12.85",
+      "Port": 6101,
+      "Active": true,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 3,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "Id": null,
+    "Name": "ZebraZt411"
+  }
+}

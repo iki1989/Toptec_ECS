@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{844E7F2F-5509-4201-8457-9D3E8D382A92}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ECS.Touch</RootNamespace>
+    <AssemblyName>ECS.Touch</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ECS_Touch.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ECS.Model\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="Secl.v3">
+      <HintPath>..\ECS.Model\Library\Secl.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.v3">
+      <HintPath>..\ECS.Model\Library\SmartCode.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.Wpf.v3">
+      <HintPath>..\ECS.Model\Library\SmartCode.Wpf.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ECS.Model\Library\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CV_Popup.xaml.cs">
+      <DependentUpon>CV_Popup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SmartPackingScreen.xaml.cs">
+      <DependentUpon>SmartPackingScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConveyorScreen.xaml.cs">
+      <DependentUpon>ConveyorScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CaseErectScreen.xaml.cs">
+      <DependentUpon>CaseErectScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IntroScreen.xaml.cs">
+      <DependentUpon>IntroScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeightInspectorScreen.xaml.cs">
+      <DependentUpon>WeightInspectorScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvoiceRejectScreen.xaml.cs">
+      <DependentUpon>InvoiceRejectScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BcrLcdScreen.xaml.cs">
+      <DependentUpon>BcrLcdScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CV_Popup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\SmartPackingScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ConveyorScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CaseErectScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\IntroScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WeightInspectorScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\InvoiceRejectScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BcrLcdScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\app.manifest" />
+    <Resource Include="Font\CJ ONLYONE NEW body Light.ttf" />
+    <Resource Include="Font\CJ ONLYONE NEW body Regular.ttf" />
+    <Resource Include="Font\CJ ONLYONE NEW title Bold.ttf" />
+    <Resource Include="Font\CJ ONLYONE NEW title Medium.ttf" />
+    <Resource Include="Font\NotoSans-Black.ttf" />
+    <Resource Include="Font\NotoSansCJKkr-Black.otf" />
+    <Resource Include="Font\본고딕KR-Normal.ttf" />
+    <None Include="Images\Login1.jps" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Images\Setting.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Alarm.png" />
+    <Resource Include="Images\Background2.PNG" />
+    <Resource Include="Images\Background3.PNG" />
+    <Resource Include="Images\background5.png" />
+    <Resource Include="Images\Barcode.ico" />
+    <Resource Include="Images\Buffer.PNG" />
+    <Resource Include="Images\close.ico" />
+    <Resource Include="Images\close2.png" />
+    <Resource Include="Images\Excel.png" />
+    <Resource Include="Images\Human.PNG" />
+    <Resource Include="Images\Information.png" />
+    <Resource Include="Images\Invoice.PNG" />
+    <Resource Include="Images\Laser.PNG" />
+    <Resource Include="Images\LedOff.png" />
+    <Resource Include="Images\LedOn.ico" />
+    <Resource Include="Images\Login1.png" />
+    <Resource Include="Images\logo.PNG" />
+    <Resource Include="Images\MainBackground1.png" />
+    <Resource Include="Images\MainMenu.png" />
+    <Resource Include="Images\menu.ico" />
+    <Resource Include="Images\Message.png" />
+    <Resource Include="Images\Motor.PNG" />
+    <Resource Include="Images\Origin.ico" />
+    <Resource Include="Images\Question.png" />
+    <Resource Include="Images\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_up_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_down_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CVBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\infobox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Login1.jpg" />
+    <Resource Include="Images\over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_line_70x70.png" />
+    <Resource Include="Images\btn_line_disable.png" />
+    <Resource Include="Images\btn_line_normal_01.png" />
+    <Resource Include="Images\btn_line_normal_02.png" />
+    <Resource Include="Images\btn_on.png" />
+    <Resource Include="Images\btn_reflash_190x190.png" />
+    <Resource Include="Images\btn_reflash_190x190_on.png" />
+    <Resource Include="Images\btn_reflash_200x50.png" />
+    <Resource Include="Images\btn_search_190x190.png" />
+    <Resource Include="Images\btn_search_190x190_on.png" />
+    <Resource Include="Images\btn_search_200x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_line_70x70_over.png" />
+    <Resource Include="Images\btn_line_normal_01_over.png" />
+    <Resource Include="Images\btn_reflash_200x50_over.png" />
+    <Resource Include="Images\btn_search_200x50_over.png" />
+    <Resource Include="Images\btn_search_40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toggle_bg.png" />
+    <Resource Include="Images\toggle_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tab_underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Touch 16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Touch 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Touch 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Touch 128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ECS_Touch.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ECS_Touch.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\InputCVBackground.png" />
+    <Resource Include="Images\OutCVBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn_close_18x18.png" />
+    <Resource Include="Images\btn_del_20x20.png" />
+    <Resource Include="Images\box.png" />
+    <Resource Include="Images\btn_bottom_b.png" />
+    <Resource Include="Images\btn_top_b.png" />
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECS.Core\ECS.Core.csproj">
+      <Project>{b20e9279-2c4e-411d-976a-825da113d1d8}</Project>
+      <Name>ECS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ECS.Model\ECS.Model.csproj">
+      <Project>{5ecccc44-f2e8-4b76-8136-2ada4bc11b41}</Project>
+      <Name>ECS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

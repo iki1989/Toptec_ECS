@@ -1,0 +1,12 @@
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\bin\Release\ECS.Model.dll
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\bin\Release\ECS.Model.pdb
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\bin\Release\Newtonsoft.Json.dll
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\bin\Release\System.Web.Http.dll
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\obj\Release\ECS.Model.csproj.CoreCompileInputs.cache
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\obj\Release\ECS.Model.csproj.CopyComplete
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\obj\Release\ECS.Model.dll
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\obj\Release\ECS.Model.pdb
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\bin\Release\SmartCode.v3.dll
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\bin\Release\System.Data.SQLite.dll
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\bin\Release\Oracle.ManagedDataAccess.dll
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\ECS.Model\obj\Release\ECS.Model.csproj.AssemblyReference.cache

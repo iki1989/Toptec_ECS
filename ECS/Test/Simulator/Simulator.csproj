@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D42F25C-20CD-47B9-AECA-7C9D2631B13D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Simulator</RootNamespace>
+    <AssemblyName>Simulator</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS.Model\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Secl.v3">
+      <HintPath>..\..\ECS.Model\Library\Secl.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.v3">
+      <HintPath>..\..\ECS.Model\Library\SmartCode.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlTopBcr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTopBcr.Designer.cs">
+      <DependentUpon>UserControlTopBcr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBcr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBcr.Designer.cs">
+      <DependentUpon>UserControlBcr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlRESTfulRicp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlRESTfulRicp.Designer.cs">
+      <DependentUpon>UserControlRESTfulRicp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlRESTfulWcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlRESTfulWcs.Designer.cs">
+      <DependentUpon>UserControlRESTfulWcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlWebService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlWebService.Designer.cs">
+      <DependentUpon>UserControlWebService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDynamicScale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlDynamicScale.Designer.cs">
+      <DependentUpon>UserControlDynamicScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlZebras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlZebras.Designer.cs">
+      <DependentUpon>UserControlZebras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlZebraZe500.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlZebraZe500.Designer.cs">
+      <DependentUpon>UserControlZebraZe500.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlZebraZt411.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlZebraZt411.Designer.cs">
+      <DependentUpon>UserControlZebraZt411.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlInkjet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlInkjet.Designer.cs">
+      <DependentUpon>UserControlInkjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBcrs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBcrs.Designer.cs">
+      <DependentUpon>UserControlBcrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlInkjets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlInkjets.Designer.cs">
+      <DependentUpon>UserControlInkjets.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControlTopBcr.resx">
+      <DependentUpon>UserControlTopBcr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlBcr.resx">
+      <DependentUpon>UserControlBcr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlRESTfulRicp.resx">
+      <DependentUpon>UserControlRESTfulRicp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlRESTfulWcs.resx">
+      <DependentUpon>UserControlRESTfulWcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlWebService.resx">
+      <DependentUpon>UserControlWebService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlDynamicScale.resx">
+      <DependentUpon>UserControlDynamicScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlZebras.resx">
+      <DependentUpon>UserControlZebras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlZebraZe500.resx">
+      <DependentUpon>UserControlZebraZe500.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlZebraZt411.resx">
+      <DependentUpon>UserControlZebraZt411.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlInkjet.resx">
+      <DependentUpon>UserControlInkjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlBcrs.resx">
+      <DependentUpon>UserControlBcrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlInkjets.resx">
+      <DependentUpon>UserControlInkjets.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Test\order_data.csv" />
+    <None Include="Test\order_meta.csv" />
+    <None Include="Test\PickingResultsImport.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ECS.Core\ECS.Core.csproj">
+      <Project>{B20E9279-2C4E-411D-976A-825DA113D1D8}</Project>
+      <Name>ECS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ECS.Model\ECS.Model.csproj">
+      <Project>{5ECCCC44-F2E8-4B76-8136-2ADA4BC11B41}</Project>
+      <Name>ECS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Test\Zpl\552595403042.txt" />
+    <Content Include="Test\Zpl\552595403053.txt" />
+    <Content Include="Test\Zpl\552595403064.txt" />
+    <Content Include="Test\Zpl\552595403075.txt" />
+    <Content Include="Test\Zpl\552595403086.txt" />
+    <Content Include="Test\Zpl\552595403090.txt" />
+    <Content Include="Test\Zpl\552595403101.txt" />
+    <Content Include="Test\Zpl\552595403112.txt" />
+    <Content Include="Test\Zpl\552595403123.txt" />
+    <Content Include="Test\Zpl\552595403134.txt" />
+    <Content Include="Test\Zpl\552595403145.txt" />
+    <Content Include="Test\Zpl\552595403156.txt" />
+    <Content Include="Test\Zpl\552595403160.txt" />
+    <Content Include="Test\Zpl\552595403171.txt" />
+    <Content Include="Test\Zpl\552595403182.txt" />
+    <Content Include="Test\Zpl\552595403193.txt" />
+    <Content Include="Test\Zpl\552595403204.txt" />
+    <Content Include="Test\Zpl\552595403215.txt" />
+    <Content Include="Test\Zpl\552595403226.txt" />
+    <Content Include="Test\Zpl\552595403230.txt" />
+    <Content Include="Test\Zpl\552595403241.txt" />
+    <Content Include="Test\Zpl\552595403252.txt" />
+    <Content Include="Test\Zpl\552595403263.txt" />
+    <Content Include="Test\Zpl\552595403274.txt" />
+    <Content Include="Test\Zpl\552595403285.txt" />
+    <Content Include="Test\Zpl\552595403296.txt" />
+    <Content Include="Test\Zpl\552595403300.txt" />
+    <Content Include="Test\Zpl\552595403311.txt" />
+    <Content Include="Test\Zpl\552595403322.txt" />
+    <Content Include="Test\Zpl\552595403333.txt" />
+    <Content Include="Test\Zpl\552595403344.txt" />
+    <Content Include="Test\Zpl\552595403355.txt" />
+    <Content Include="Test\Zpl\552595403366.txt" />
+    <Content Include="Test\Zpl\552595403370.txt" />
+    <Content Include="Test\Zpl\552595403381.txt" />
+    <Content Include="Test\Zpl\552595403392.txt" />
+    <Content Include="Test\Zpl\552595403403.txt" />
+    <Content Include="Test\Zpl\552595403414.txt" />
+    <Content Include="Test\Zpl\552595403425.txt" />
+    <Content Include="Test\Zpl\552595403436.txt" />
+    <Content Include="Test\Zpl\552595403440.txt" />
+    <Content Include="Test\Zpl\552595403451.txt" />
+    <Content Include="Test\Zpl\552595403462.txt" />
+    <Content Include="Test\Zpl\552595403473.txt" />
+    <Content Include="Test\Zpl\552595403484.txt" />
+    <Content Include="Test\Zpl\552595403495.txt" />
+    <Content Include="Test\Zpl\552595403506.txt" />
+    <Content Include="Test\Zpl\552595403510.txt" />
+    <Content Include="Test\Zpl\552595403521.txt" />
+    <Content Include="Test\Zpl\552595403532.txt" />
+    <Content Include="Test\Zpl\552595403543.txt" />
+    <Content Include="Test\Zpl\552595403554.txt" />
+    <Content Include="Test\Zpl\552595403565.txt" />
+    <Content Include="Test\Zpl\552595403576.txt" />
+    <Content Include="Test\Zpl\552595403580.txt" />
+    <Content Include="Test\Zpl\552595403591.txt" />
+    <Content Include="Test\Zpl\552595403602.txt" />
+    <Content Include="Test\Zpl\552595403613.txt" />
+    <Content Include="Test\Zpl\552595403624.txt" />
+    <Content Include="Test\Zpl\552595403635.txt" />
+    <Content Include="Test\Zpl\552595403646.txt" />
+    <Content Include="Test\Zpl\552595403650.txt" />
+    <Content Include="Test\Zpl\552595403661.txt" />
+    <Content Include="Test\Zpl\552595403672.txt" />
+    <Content Include="Test\Zpl\552595403683.txt" />
+    <Content Include="Test\Zpl\552595403694.txt" />
+    <Content Include="Test\Zpl\552595403705.txt" />
+    <Content Include="Test\Zpl\552595403716.txt" />
+    <Content Include="Test\Zpl\552595403720.txt" />
+    <Content Include="Test\Zpl\552595403731.txt" />
+    <Content Include="Test\Zpl\552595403742.txt" />
+    <Content Include="Test\Zpl\552595403753.txt" />
+    <Content Include="Test\Zpl\552595403764.txt" />
+    <Content Include="Test\Zpl\552595403775.txt" />
+    <Content Include="Test\Zpl\552595403786.txt" />
+    <Content Include="Test\Zpl\552595403790.txt" />
+    <Content Include="Test\Zpl\552595403801.txt" />
+    <Content Include="Test\Zpl\552595403812.txt" />
+    <Content Include="Test\Zpl\552595403823.txt" />
+    <Content Include="Test\Zpl\552595403834.txt" />
+    <Content Include="Test\Zpl\552595403845.txt" />
+    <Content Include="Test\Zpl\552595403856.txt" />
+    <Content Include="Test\Zpl\552595403860.txt" />
+    <Content Include="Test\Zpl\552595403871.txt" />
+    <Content Include="Test\Zpl\552595403882.txt" />
+    <Content Include="Test\Zpl\552595403893.txt" />
+    <Content Include="Test\Zpl\552595403904.txt" />
+    <Content Include="Test\Zpl\552595403915.txt" />
+    <Content Include="Test\Zpl\552595403926.txt" />
+    <Content Include="Test\Zpl\552595403930.txt" />
+    <Content Include="Test\Zpl\552595403941.txt" />
+    <Content Include="Test\Zpl\552595403952.txt" />
+    <Content Include="Test\Zpl\552595403963.txt" />
+    <Content Include="Test\Zpl\552595403974.txt" />
+    <Content Include="Test\Zpl\552595403985.txt" />
+    <Content Include="Test\Zpl\552595403996.txt" />
+    <Content Include="Test\Zpl\552595404000.txt" />
+    <Content Include="Test\Zpl\552595404011.txt" />
+    <Content Include="Test\Zpl\552595404022.txt" />
+    <Content Include="Test\Zpl\552595404033.txt" />
+    <Content Include="Test\Zpl\552595404044.txt" />
+    <Content Include="Test\Zpl\552595404055.txt" />
+    <Content Include="Test\Zpl\552595404066.txt" />
+    <Content Include="Test\Zpl\552595404070.txt" />
+    <Content Include="Test\Zpl\552595404081.txt" />
+    <Content Include="Test\Zpl\552595404092.txt" />
+    <Content Include="Test\Zpl\552595404103.txt" />
+    <Content Include="Test\Zpl\552595404114.txt" />
+    <Content Include="Test\Zpl\552595404125.txt" />
+    <Content Include="Test\Zpl\552595404136.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

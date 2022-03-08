@@ -1,0 +1,15 @@
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\bin\Debug\TestWpfApp.exe.config
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\bin\Debug\TestWpfApp.exe
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\bin\Debug\TestWpfApp.pdb
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp.csproj.AssemblyReference.cache
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\MainWindow.g.cs
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\App.g.cs
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp_MarkupCompile.cache
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp_MarkupCompile.lref
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\MainWindow.baml
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp.g.resources
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp.Properties.Resources.resources
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp.csproj.GenerateResource.cache
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp.csproj.CoreCompileInputs.cache
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp.exe
+D:\Project\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\TOPTEC_CJ_ECS\ECS\Test\TestWpfApp\obj\Debug\TestWpfApp.pdb

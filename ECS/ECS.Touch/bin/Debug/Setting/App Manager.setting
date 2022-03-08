@@ -1,0 +1,16 @@
+{
+  "TouchType": 1,
+  "Password": "1",
+  "CultureName": "ko-KR",
+  "AllowMultiProcess": false,
+  "UseAsyncEvent": false,
+  "DisableDiskDefragmentation": true,
+  "DisableSleepModeAndDisplayOff": true,
+  "Logger": {
+    "FileExtension": "log",
+    "Level": 2,
+    "Division": 1,
+    "SplitSizeMegabytes": 5,
+    "KeepingDays": 30
+  }
+}

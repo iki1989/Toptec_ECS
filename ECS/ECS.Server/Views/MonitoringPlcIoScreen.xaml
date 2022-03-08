@@ -1,0 +1,58 @@
+﻿<Page x:Class="ECS.Server.Views.MonitoringPlcIoScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:ECS.Core.ViewModels.Server;assembly=ECS.Core"
+      xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" 
+      xmlns:local="clr-namespace:ECS.Server.Views"
+      mc:Ignorable="d" 
+      Title="MonitoringPlcIoScreen"
+      Loaded="MonitoringPlcIoScreen_Loaded"
+      Unloaded="MonitoringPlcIoScreen_Unloaded">
+    <Page.DataContext>
+        <vm:ConnectionInfoEquipmentsModel/>
+    </Page.DataContext>
+    <TabControl x:Name="tab">
+        <TabItem x:Name="Picking1Tab">
+            <TabItem.Header>
+                <TextBlock Text="Picking#1"/>
+            </TabItem.Header>
+            <WindowsFormsHost>
+                <wf:Control x:Name="ControlPicking1" Text="Picking#1"/>
+            </WindowsFormsHost>
+        </TabItem>
+        <TabItem x:Name="Picking2Tab">
+            <TabItem.Header>
+                <TextBlock Text="Picking#2"/>
+            </TabItem.Header>
+            <WindowsFormsHost>
+                <wf:Control x:Name="ControlPicking2"/>
+            </WindowsFormsHost>
+        </TabItem>
+        <TabItem x:Name="CaseErectTab">
+            <TabItem.Header>
+                <TextBlock Text="CaseErect"/>
+            </TabItem.Header>
+            <WindowsFormsHost>
+                <wf:Control x:Name="ControlCaseErect"/>
+            </WindowsFormsHost>
+        </TabItem>
+        <TabItem x:Name="WeightInvoiceTab">
+            <TabItem.Header>
+                <TextBlock Text="WeightInvoice"/>
+            </TabItem.Header>
+            <WindowsFormsHost>
+                <wf:Control x:Name="ControlWeightInvoice"/>
+            </WindowsFormsHost>
+        </TabItem>
+        <TabItem x:Name="SmartPackingTab">
+            <TabItem.Header>
+                <TextBlock Text="SmartPacking"/>
+            </TabItem.Header>
+            <WindowsFormsHost>
+                <wf:Control x:Name="ControlSmartPacking"/>
+            </WindowsFormsHost>
+        </TabItem>
+    </TabControl>
+</Page>

@@ -1,0 +1,14 @@
+{
+  "DeviceStatus": "ricp/api/ecs/device/status",
+  "ContainerScan": "ricp/api/ecs/container/scan",
+  "WeightContainerScan": "ricp/api/ecs/weight/container/scan",
+  "WeightResult": "ricp/api/ecs/weight/result",
+  "InvoiceScan": "ricp/api/ecs/invoice/scan",
+  "OutinvoiceScan": "ricp/api/ecs/outinvoice/scan",
+  "LocationPointPush": "ricp/api/ecs/location/point/push",
+  "LocationPointStatus": "ricp/api/ecs/location/point/status",
+  "RolltainerSensorStatus": "ricp/api/ecs/rolltainer/sensor/status",
+  "RmsStatusSetting": "ricp/api/ecs/rms/status/setting",
+  "PackageResult": "ricp/api/ecs/package/result",
+  "DomainName": "http://192.168.12.113:8080"
+}

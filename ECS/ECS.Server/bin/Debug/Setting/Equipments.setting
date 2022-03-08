@@ -1,0 +1,676 @@
+{
+  "PlcEquipmentSettings": [
+    {
+      "CommunicatorName": "Picking#1",
+      "HandlerGroupName": "Picking#1",
+      "CommunicatorSetting": {
+        "Name": "TCP Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 3001,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Picking#1"
+    },
+    {
+      "CommunicatorName": "Picking#2",
+      "HandlerGroupName": "Picking#2",
+      "CommunicatorSetting": {
+        "Name": "TCP Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 3001,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Picking#2"
+    },
+    {
+      "CommunicatorName": "CaseErect",
+      "HandlerGroupName": "CaseErect",
+      "CommunicatorSetting": {
+        "Name": "TCP Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 3001,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "CaseErect"
+    },
+    {
+      "CommunicatorName": "WeightInvoice",
+      "HandlerGroupName": "WeightInvoice",
+      "CommunicatorSetting": {
+        "Name": "TCP Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 3001,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "WeightInvoice"
+    },
+    {
+      "$type": "ECS.Core.Equipments.PlcSmartPackingSetting, ECS.Core",
+      "BcrCommunicatorSetting": {
+        "Name": "BCR(SmartPacking) Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 8400,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\PLC SmartPacking",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "CommunicatorName": "SmartPacking",
+      "HandlerGroupName": "SmartPacking",
+      "CommunicatorSetting": {
+        "Name": "TCP Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 3001,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": "GP21",
+      "Name": "SmartPacking"
+    }
+  ],
+  "DynamicScaleEquipmentSetting": {
+    "CommunicatorSetting": {
+      "Name": "DynamicScale Communicator)",
+      "Ip": "127.0.0.1",
+      "Port": 1749,
+      "Active": true,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 3,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Dynamic Scale",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "BcrCommunicatorSetting": {
+      "Name": "BCR#2(DynamicScale) Communicator",
+      "Ip": "127.0.0.1",
+      "Port": 9000,
+      "Active": true,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 3,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Dynamic Scale",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "WeightBindingTimeoutSecond": 3,
+    "Id": "GW21",
+    "Name": "DynamicScale"
+  },
+  "InkjectEquipmentSettings": [
+    {
+      "CommunicatorSetting": {
+        "Name": "Inkject#1 Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 4000,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Inkject#1",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "BcrCommunicatorSetting": {
+        "Name": "BCR#1-1(Inkject#1 Rear) Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 8005,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Inkject#1",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Inkject#1"
+    },
+    {
+      "CommunicatorSetting": {
+        "Name": "Inkject#2 Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 4001,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Inkject#2",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "BcrCommunicatorSetting": {
+        "Name": "BCR#1-2(Inkject#2 Rear) Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 8005,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Inkject#2",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Inkject#2"
+    }
+  ],
+  "LabelPrinterZebraZe500EquipmentSettings": [
+    {
+      "CommunicatorSetting": {
+        "Name": "Normal Invoice Label Printer Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 6101,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Label Printer Zebra Ze500 Normal",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "BcrCommunicatorSetting": {
+        "Name": "BCR#4-1(Normal Invoice Label Printer Front) Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 8005,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Label Printer Zebra Ze500 Normal",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": "GL21",
+      "Name": "Normal Invoice Label Printer"
+    },
+    {
+      "CommunicatorSetting": {
+        "Name": "Smart Invoice Label Printer Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 6102,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Label Printer Zebra Ze500 Smart",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "BcrCommunicatorSetting": {
+        "Name": "BCR#4-2(Smart Invoice Label Printer Front) Communicator",
+        "Ip": "127.0.0.1",
+        "Port": 8005,
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 3,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Label Printer Zebra Ze500 Smart",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": "GL22",
+      "Name": "Smart Invoice Label Printer"
+    }
+  ],
+  "TopBcrEquipmentSetting": {
+    "CommunicatorSetting": {
+      "Name": "DS-AV900 & BCR Matrix300N",
+      "Ip": "127.0.0.1",
+      "Port": 8500,
+      "Active": true,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 3,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Top BCR",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "Id": "GUB21",
+    "Name": "Top BCR"
+  },
+  "RouteLogicalEquipmentSetting": {
+    "BcrCommunicatorSetting": {
+      "Name": "BCR#3(Route Logical) Communicator",
+      "Ip": "127.0.0.1",
+      "Port": 8300,
+      "Active": true,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 3,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Route Logical",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "CommunicatorSetting": {
+      "Name": "TCP Communicator",
+      "Ip": "127.0.0.1",
+      "Port": 3001,
+      "Active": true,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 0,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "Id": "GBC21",
+    "Name": "Route Logical"
+  },
+  "OutLogicalEquipmentSetting": {
+    "BcrCommunicatorSetting": {
+      "Name": "BCR#6(Out Logical) Communicator",
+      "Ip": "127.0.0.1",
+      "Port": 8005,
+      "Active": true,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 3,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Out Logical",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "CommunicatorSetting": {
+      "Name": "TCP Communicator",
+      "Ip": "127.0.0.1",
+      "Port": 3001,
+      "Active": true,
+      "ConnectSeparationTimeoutSeconds": 10,
+      "IntercharacterTimeoutSeconds": 5,
+      "PingTestIntervalSeconds": 0,
+      "PingTestTimeoutSeconds": 3,
+      "Enabled": true,
+      "LogDirectory": "",
+      "Logger": {
+        "FileExtension": "log",
+        "Level": 2,
+        "Division": 1,
+        "SplitSizeMegabytes": 5,
+        "KeepingDays": 30
+      }
+    },
+    "Id": "GOP21",
+    "Name": "Out Logical"
+  },
+  "PcEquipmenttSettings": [
+    {
+      "CommunicatorSetting": {
+        "Name": "Touch PC CaseErect Communicator",
+        "Port": 7000,
+        "DeviceId": 1,
+        "ReplyTimeoutSeconds": 45,
+        "ControlTransactionTimeoutSeconds": 5,
+        "NotSelectedTimeoutSeconds": 10,
+        "LinktestIntervalSeconds": 30,
+        "SeparateTraceLog": true,
+        "Ip": "127.0.0.1",
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Touch PC Case Erect",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": "GOR21",
+      "Name": "Touch PC CaseErect"
+    },
+    {
+      "CommunicatorSetting": {
+        "Name": "Touch PC Weight Inspector Communicator",
+        "Port": 7000,
+        "DeviceId": 1,
+        "ReplyTimeoutSeconds": 45,
+        "ControlTransactionTimeoutSeconds": 5,
+        "NotSelectedTimeoutSeconds": 10,
+        "LinktestIntervalSeconds": 30,
+        "SeparateTraceLog": true,
+        "Ip": "127.0.0.1",
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Touch PC Weight Inspector",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Touch PC Weight Inspector"
+    },
+    {
+      "CommunicatorSetting": {
+        "Name": "Touch PC Invoice Reject Communicator",
+        "Port": 9000,
+        "DeviceId": 1,
+        "ReplyTimeoutSeconds": 45,
+        "ControlTransactionTimeoutSeconds": 5,
+        "NotSelectedTimeoutSeconds": 10,
+        "LinktestIntervalSeconds": 30,
+        "SeparateTraceLog": true,
+        "Ip": "127.0.0.1",
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Touch PC InvoiceReject",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Touch PC Invoice Reject"
+    },
+    {
+      "CommunicatorSetting": {
+        "Name": "Touch PC Bcr Lcd Communicator",
+        "Port": 9300,
+        "DeviceId": 1,
+        "ReplyTimeoutSeconds": 45,
+        "ControlTransactionTimeoutSeconds": 5,
+        "NotSelectedTimeoutSeconds": 10,
+        "LinktestIntervalSeconds": 30,
+        "SeparateTraceLog": true,
+        "Ip": "127.0.0.1",
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Touch PC BCR LCD",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Touch PC Bcr Lcd"
+    },
+    {
+      "CommunicatorSetting": {
+        "Name": "Touch PC Conveyor1 Communicator",
+        "Port": 7000,
+        "DeviceId": 1,
+        "ReplyTimeoutSeconds": 45,
+        "ControlTransactionTimeoutSeconds": 5,
+        "NotSelectedTimeoutSeconds": 10,
+        "LinktestIntervalSeconds": 30,
+        "SeparateTraceLog": true,
+        "Ip": "127.0.0.1",
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Touch PC Conveyor#1",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Touch PC Conveyor1"
+    },
+    {
+      "CommunicatorSetting": {
+        "Name": "Touch PC Conveyor2 Communicator",
+        "Port": 7000,
+        "DeviceId": 1,
+        "ReplyTimeoutSeconds": 45,
+        "ControlTransactionTimeoutSeconds": 5,
+        "NotSelectedTimeoutSeconds": 10,
+        "LinktestIntervalSeconds": 30,
+        "SeparateTraceLog": true,
+        "Ip": "127.0.0.1",
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Touch PC Conveyor#2",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Touch PC Conveyor2"
+    },
+    {
+      "CommunicatorSetting": {
+        "Name": "Touch PC Smart Packing Communicator",
+        "Port": 2300,
+        "DeviceId": 1,
+        "ReplyTimeoutSeconds": 45,
+        "ControlTransactionTimeoutSeconds": 5,
+        "NotSelectedTimeoutSeconds": 10,
+        "LinktestIntervalSeconds": 30,
+        "SeparateTraceLog": true,
+        "Ip": "127.0.0.1",
+        "Active": true,
+        "ConnectSeparationTimeoutSeconds": 10,
+        "IntercharacterTimeoutSeconds": 5,
+        "PingTestIntervalSeconds": 0,
+        "PingTestTimeoutSeconds": 3,
+        "Enabled": true,
+        "LogDirectory": "D:\\Project\\[UB21-077] 톱텍_CJ 군포 풀필먼트 ECS 구축\\TOPTEC_CJ_ECS\\ECS\\ECS.Server\\bin\\Debug\\Log\\Equipments\\Touch PC SmartPacking",
+        "Logger": {
+          "FileExtension": "log",
+          "Level": 2,
+          "Division": 1,
+          "SplitSizeMegabytes": 5,
+          "KeepingDays": 30
+        }
+      },
+      "Id": null,
+      "Name": "Touch PC Smart Packing"
+    }
+  ]
+}

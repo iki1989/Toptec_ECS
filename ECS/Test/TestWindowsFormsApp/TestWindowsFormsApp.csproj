@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA61186E-0C77-4F9D-97E5-0EF333C1596A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TestWindowsFormsApp</RootNamespace>
+    <AssemblyName>TestWindowsFormsApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS.Model\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Secl.v3">
+      <HintPath>..\..\ECS.Model\Library\Secl.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartCode.v3">
+      <HintPath>..\..\ECS.Model\Library\SmartCode.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlBcr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBcr.Designer.cs">
+      <DependentUpon>UserControlBcr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDynamicScale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlDynamicScale.Designer.cs">
+      <DependentUpon>UserControlDynamicScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlRESTfulRicp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlRESTfulRicp.Designer.cs">
+      <DependentUpon>UserControlRESTfulRicp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTouchPc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTouchPc.Designer.cs">
+      <DependentUpon>UserControlTouchPc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlZebraZE500.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlZebraZE500.Designer.cs">
+      <DependentUpon>UserControlZebraZE500.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlZebraZt411.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlZebraZt411.Designer.cs">
+      <DependentUpon>UserControlZebraZt411.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBixolon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBixolon.Designer.cs">
+      <DependentUpon>UserControlBixolon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlInkjet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlInkjet.Designer.cs">
+      <DependentUpon>UserControlInkjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlRESTfulWcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlRESTfulWcs.Designer.cs">
+      <DependentUpon>UserControlRESTfulWcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlWebService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlWebService.Designer.cs">
+      <DependentUpon>UserControlWebService.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControlBcr.resx">
+      <DependentUpon>UserControlBcr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlDynamicScale.resx">
+      <DependentUpon>UserControlDynamicScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlRESTfulRicp.resx">
+      <DependentUpon>UserControlRESTfulRicp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTouchPc.resx">
+      <DependentUpon>UserControlTouchPc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlZebraZE500.resx">
+      <DependentUpon>UserControlZebraZE500.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlZebraZt411.resx">
+      <DependentUpon>UserControlZebraZt411.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlBixolon.resx">
+      <DependentUpon>UserControlBixolon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlInkjet.resx">
+      <DependentUpon>UserControlInkjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlRESTfulWcs.resx">
+      <DependentUpon>UserControlRESTfulWcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlWebService.resx">
+      <DependentUpon>UserControlWebService.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ECS.Core\ECS.Core.csproj">
+      <Project>{b20e9279-2c4e-411d-976a-825da113d1d8}</Project>
+      <Name>ECS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ECS.Model\ECS.Model.csproj">
+      <Project>{5ecccc44-f2e8-4b76-8136-2ada4bc11b41}</Project>
+      <Name>ECS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

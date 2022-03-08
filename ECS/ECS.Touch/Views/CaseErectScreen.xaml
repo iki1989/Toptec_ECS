@@ -1,0 +1,876 @@
+﻿<Page x:Class="ECS.Touch.Views.CaseErectScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ECS.Touch.Views"
+      xmlns:vm="clr-namespace:ECS.Core.ViewModels.Touch;assembly=ECS.Core"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="CaseErectScreen">
+    <Page.Resources>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource Style.TextBlock.Font}"/>
+        <Style TargetType="TabItem" BasedOn="{StaticResource Style.TabItem.CustomHead}"/>
+        <Style TargetType="DatePickerTextBox">
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+        <Style x:Key="Stype.DatePicker.Calender" TargetType="Calendar">
+        </Style>
+    </Page.Resources>
+    <Page.DataContext>
+        <vm:CaseErectViewModel x:Name="ViewModel"/>
+    </Page.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Images/MainBackground1.png"/>
+            </Grid.Background>
+            <Viewbox HorizontalAlignment="Left"/>
+            <Viewbox HorizontalAlignment="Right"/>
+        </Grid>
+        <!--menu-->
+        <TabControl Grid.RowSpan="2" Margin="0,0,0,0" BorderBrush="{StaticResource Brush.LightGray}" BorderThickness="0" Background="{StaticResource Brush.White}" SelectionChanged="TabControl_SelectionChanged">
+            <TabControl.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="LineHeight" Value="{Binding FontSize,RelativeSource={RelativeSource Self}}"/>
+                    <Setter Property="TextAlignment" Value="Center"/>
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                    <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
+                    <Setter Property="Padding" Value="5,0,5,0"/>
+                </Style>
+            </TabControl.Resources>
+            <TabItem Width="140" Margin="0" BorderBrush="{x:Null}" Height="68">
+                <TabItem.Header>
+                    <TextBlock FontSize="20"><Run Text="투입"/></TextBlock>
+                </TabItem.Header>
+                <Grid Height="996" Width="1920">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 5">
+                                <Border BorderThickness="0" BorderBrush="Black" Width="600" HorizontalAlignment="Left">
+                                    <TextBlock FontSize="50" Margin="0" TextDecorations="{x:Null}" Padding="0,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="600">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="TextAlignment" Value="Center"/>
+                                                <Setter Property="Text" Value="검증 실패"/>
+                                                <Setter Property="Background" Value="{StaticResource Brush.CjRed}"/>
+                                                <Setter Property="Foreground" Value="{StaticResource Brush.Black}"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RecentErectData1.Verification}" Value="OK">
+                                                        <Setter Property="Text" Value="검증 성공"/>
+                                                        <Setter Property="TextBlock.Background" Value="{StaticResource Brush.YellowGreen}"/>
+                                                        <Setter Property="Foreground" Value="{StaticResource Brush.Black}"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Border>
+                                <!--<ToggleButton Margin="70,0,0,0" Style="{StaticResource Style.ToggleButton.Common}" VerticalAlignment="Center" Height="70">
+                                    <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="잉크 부족 무시" Margin="3" Width="200"/>
+                                </ToggleButton>-->
+                                <CheckBox IsChecked="{Binding IgnoreInkLeak1}" Margin="40,-5,0,0" VerticalAlignment="Center" Width="16" BorderBrush="#FF007DC3">
+                                    <CheckBox.LayoutTransform>
+                                        <ScaleTransform ScaleX="3" ScaleY="3"/>
+                                    </CheckBox.LayoutTransform>
+                                </CheckBox>
+                                <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="잉크 부족 무시" Margin="3" Width="200"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="10 5">
+                                <TextBlock Text="박스 호수" FontSize="30" VerticalAlignment="Center" Width="170" TextAlignment="Left" Foreground="Black"/>
+                                <Border BorderBrush="{x:Null}" Width="430" >
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding RecentErectData1.BoxType}" FontSize="40"  TextAlignment="Center"/>
+                                        <TextBlock Text=" / " FontSize="40"  TextAlignment="Center"/>
+                                        <TextBlock Text="{Binding RecentErectData1.BoxName}" FontSize="40"  TextAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                                <Border Margin="70,0,0,0" BorderThickness="2" VerticalAlignment="Center" Width="200" Height="70">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="4">
+                                        <TextBlock FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="{Binding InkRatio1}"/>
+                                        <TextBlock FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="%"/>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="10 5">
+                                <TextBlock Text="박스 ID" FontSize="30" VerticalAlignment="Center" Width="170" TextAlignment="Left" Foreground="Black"/>
+                                <TextBlock Text="{Binding RecentErectData1.BoxId}" FontSize="40" VerticalAlignment="Center" Width="430" TextAlignment="Center"/>
+                                <Button Style="{StaticResource Style.Button.Common}" Click="Resume1Click" Height="70" Margin="70,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="재가동" Margin="3" Width="200"/>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        <Border Margin="10" Grid.Row="1" BorderThickness="2" BorderBrush="{StaticResource Brush.LightGray}">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="20,0,0,0"  Width="916">
+                                    <TextBlock Text="투입1" FontSize="30
+                                               " VerticalAlignment="Bottom" Foreground="{StaticResource Brush.CjBlue}"/>
+                                    <Button Style="{StaticResource Style.Button.Refresh}" Margin="783 10 0 10" Width="40" Height="40" BorderBrush="{StaticResource Brush.CjBlue}"/>
+                                </StackPanel>
+                                <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <Button Style="{StaticResource Style.Button.Top}" Click="CaseErect1TopClick" Margin="10"/>
+                                    <Button Style="{StaticResource Style.Button.Up}" Click="CaseErect1UpClick" Margin="10"/>
+                                    <Button Style="{StaticResource Style.Button.Down}" Click="CaseErect1DownClick" Margin="10"/>
+                                    <Button Style="{StaticResource Style.Button.Bottom}" Click="CaseErect1BottomClick" Margin="10"/>
+                                </StackPanel>
+                                <DataGrid Style="{StaticResource Style.DataGrid.Common}" FontSize="28" Margin="20,14,0,20" ItemsSource="{Binding CaseErectList1}">
+                                    <DataGrid.RowStyle>
+                                        <Style TargetType="DataGridRow">
+                                            <Setter Property="Background" Value="{StaticResource Brush.CjYellow}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Verification}" Value="OK">
+                                                    <Setter Property="Background" Value="{x:Null}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.RowStyle>
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="박스타입" Binding="{Binding BoxType}" Width="150"/>
+                                        <DataGridTextColumn Header="박스ID" Binding="{Binding BoxId}"  Width="200"/>
+                                        <DataGridTextColumn Header="투입 일시" Binding="{Binding ErectedAt, StringFormat=yy-MM-dd HH:mm:ss}" Width="354"/>
+                                        <DataGridTemplateColumn Header="검증결과" Width="150">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image x:Name="image" Width="33"/>
+                                                    <DataTemplate.Triggers>
+                                                        <DataTrigger Binding="{Binding Verification}" Value="NOREAD">
+                                                            <Setter TargetName="image" Property="Source" Value="/Images/LedOff.png"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Verification}" Value="DUPLICATE">
+                                                            <Setter TargetName="image" Property="Source" Value="/Images/LedOff.png"/>
+                                                        </DataTrigger>
+                                                    </DataTemplate.Triggers>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <StackPanel Orientation="Horizontal" Margin="10 5">
+                                <Border BorderThickness="0" BorderBrush="Black" Width="600" HorizontalAlignment="Left">
+                                    <TextBlock FontSize="50" Margin="0" TextDecorations="{x:Null}" Padding="0,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="600">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="TextAlignment" Value="Center"/>
+                                                <Setter Property="Text" Value="검증 실패"/>
+                                                <Setter Property="Background" Value="{StaticResource Brush.CjRed}"/>
+                                                <Setter Property="Foreground" Value="{StaticResource Brush.Black}"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding RecentErectData2.Verification}" Value="OK">
+                                                        <Setter Property="Text" Value="검증 성공"/>
+                                                        <Setter Property="TextBlock.Background" Value="{StaticResource Brush.YellowGreen}"/>
+                                                        <Setter Property="Foreground" Value="{StaticResource Brush.Black}"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Border>
+                                <!--<ToggleButton Style="{StaticResource Style.ToggleButton.Common}" Margin="35,0,0,0" VerticalAlignment="Center" Height="70">
+                                    <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="잉크 부족 무시" Margin="3" Width="200"/>
+                                </ToggleButton>-->
+                                <CheckBox IsChecked="{Binding IgnoreInkLeak2}" Margin="12,-5,0,0" VerticalAlignment="Center" Width="16" BorderBrush="#FF007DC3">
+                                    <CheckBox.LayoutTransform>
+                                        <ScaleTransform ScaleX="3" ScaleY="3"/>
+                                    </CheckBox.LayoutTransform>
+                                </CheckBox>
+                                <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="잉크 부족 무시" Margin="3" Width="190"/>
+
+                                <Button Click="NumberingPopupOpenClick" Style="{StaticResource Style.Button.PopupBtn}" Margin="5,0,25,0" Width="70" Height="70" BorderBrush="{x:Null}" BorderThickness="0">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Images/btn_line_70x70.png" Stretch="Uniform"/>
+                                    </Button.Background>
+                                    <TextBlock  FontSize="50" TextAlignment="Center" VerticalAlignment="Center" Text="※" Width="67" Height="40" Foreground="#FF007DC3"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="10 5">
+                                <TextBlock Text="박스 호수" FontSize="30" VerticalAlignment="Center" Width="170" TextAlignment="Left" Foreground="Black"/>
+                                <Border BorderBrush="{x:Null}" Width="430" >
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding RecentErectData2.BoxType}" FontSize="40"  TextAlignment="Center"/>
+                                        <TextBlock Text=" / " FontSize="40"  TextAlignment="Center"/>
+                                        <TextBlock Text="{Binding RecentErectData2.BoxName}" FontSize="40"  TextAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                                <Border Margin="35,0,0,0" BorderThickness="2" VerticalAlignment="Center" Height="70" Width="200">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="4">
+                                        <TextBlock FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="{Binding InkRatio2}"/>
+                                        <TextBlock FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="%"/>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="10 5">
+                                <TextBlock Text="박스 ID" FontSize="30" VerticalAlignment="Center" Width="170" TextAlignment="Left" Foreground="Black"/>
+                                <TextBlock Text="{Binding RecentErectData2.BoxId}" FontSize="40" VerticalAlignment="Center" Width="430" TextAlignment="Center"/>
+                                <Button Style="{StaticResource Style.Button.Common}" Click="Resume2Click" Margin="35,0,0,0" VerticalAlignment="Center" Height="70">
+                                    <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="재가동" Margin="3" Width="200"/>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        <Border Margin="10" Grid.Row="1" Grid.Column="1" BorderThickness="2" BorderBrush="{StaticResource Brush.LightGray}">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="20,0,0,0"  Width="916">
+                                    <TextBlock Text="투입2" FontSize="30
+                                               " VerticalAlignment="Bottom" Foreground="{StaticResource Brush.CjBlue}"/>
+                                    <Button Style="{StaticResource Style.Button.Refresh}" Margin="783 10 0 10" Width="40" Height="40"/>
+                                </StackPanel>
+                                <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <Button Style="{StaticResource Style.Button.Top}" Click="CaseErect2TopClick" Margin="10"/>
+                                    <Button Style="{StaticResource Style.Button.Up}" Click="CaseErect2UpClick" Margin="10"/>
+                                    <Button Style="{StaticResource Style.Button.Down}" Click="CaseErect2DownClick" Margin="10"/>
+                                    <Button Style="{StaticResource Style.Button.Bottom}" Click="CaseErect2BottomClick" Margin="10"/>
+                                </StackPanel>
+                                <DataGrid Style="{StaticResource Style.DataGrid.Common}" FontSize="28" Margin="20,14,0,20" ItemsSource="{Binding CaseErectList2}">
+                                    <DataGrid.RowStyle>
+                                        <Style TargetType="DataGridRow">
+                                            <Setter Property="Background" Value="{StaticResource Brush.CjYellow}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Verification}" Value="OK">
+                                                    <Setter Property="Background" Value="{x:Null}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.RowStyle>
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="박스타입" Binding="{Binding BoxType}" Width="150"/>
+                                        <DataGridTextColumn Header="박스ID" Binding="{Binding BoxId}"  Width="200"/>
+                                        <DataGridTextColumn Header="투입 일시" Binding="{Binding ErectedAt, StringFormat=yy-MM-dd HH:mm:ss}" Width="354"/>
+                                        <DataGridTemplateColumn Header="검증결과" Width="150">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image x:Name="image" Width="35"/>
+                                                    <DataTemplate.Triggers>
+                                                        <DataTrigger Binding="{Binding Verification}" Value="NOREAD">
+                                                            <Setter TargetName="image" Property="Source" Value="/Images/LedOff.png"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Verification}" Value="DUPLICATE">
+                                                            <Setter TargetName="image" Property="Source" Value="/Images/LedOff.png"/>
+                                                        </DataTrigger>
+                                                    </DataTemplate.Triggers>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Width="140" Margin="0" BorderBrush="{x:Null}" Height="68">
+                <TabItem.Header>
+                    <TextBlock FontSize="20" HorizontalAlignment="Right"><Run Text="재발행"/></TextBlock>
+                </TabItem.Header>
+                <Grid Height="996" Width="1920">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="8*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.ColumnSpan="2">
+                        <StackPanel Margin="10 0 10 0">
+                            <TextBlock FontSize="20" TextAlignment="Left" Margin="-5,30,0,0" Foreground="{StaticResource Brush.DarkGray}" Height="25"><Run Text="생성"/><Run Text=" "/><Run Text="일시"/></TextBlock>
+                            <StackPanel Orientation="Horizontal" Height="70">
+                                <DatePicker Name="CaseErectBegin" SelectedDateChanged="CaseErectDateChanged" SelectedDate="{Binding SearchBegin}" FontSize="30" DisplayDate="2019-09-13" RenderTransformOrigin="0.5,1"  Style="{StaticResource DatePickerIconResizingStyle}" Width="342" Height="45" Margin="0,12">
+                                    <DatePicker.Resources>
+                                        <Style TargetType="{x:Type Button}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Viewbox>
+                                                            <ContentPresenter/>
+                                                        </Viewbox>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DatePicker.Resources>
+                                </DatePicker>
+                                <TextBlock Text="~" FontSize="25" VerticalAlignment="Center"/>
+                                <DatePicker Name="CaseErectEnd" SelectedDateChanged="CaseErectDateChanged" SelectedDate="{Binding SearchEnd}" FontSize="30" DisplayDate="2019-09-13" RenderTransformOrigin="0.5,1"  Style="{StaticResource DatePickerIconResizingStyle}" Width="342" Height="45" Margin="0,12">
+                                    <DatePicker.Resources>
+                                        <Style TargetType="{x:Type Button}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Viewbox>
+                                                            <ContentPresenter/>
+                                                        </Viewbox>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DatePicker.Resources>
+                                </DatePicker>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" Height="70">
+                            <ComboBox Name="CaseErectBoxType" Width="200" Margin="10,10,10,0" SelectedIndex="0" Text="{Binding SelectedBoxType}"  FontSize="30" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="50" ItemsSource="{Binding BoxTypeList}" SelectionChanged="CaseErectBoxType_SelectionChanged"/>
+                            <TextBox CharacterCasing="Upper" x:Name="CaseErectCount" MaxLength="10" Text="{Binding BoxNumber}" Tag="박스 아이디"  Style="{StaticResource Style.WatermarkedTextBox}" FontSize="30" Width="281" TextAlignment="Center" Margin="10,10,10,0" Height="50" BorderBrush="{x:Null}" KeyDown="CaseErectCount_KeyDown" TextChanged="CaseErectCount_TextChanged">
+                                <TextBox.Background>
+                                    <ImageBrush ImageSource="/Images/tab_underline.png" Stretch="Uniform">
+                                        <ImageBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                                <TranslateTransform Y="0.3"/>
+                                            </TransformGroup>
+                                        </ImageBrush.RelativeTransform>
+                                    </ImageBrush>
+                                </TextBox.Background>
+                            </TextBox>
+                            <Button Style="{StaticResource Style.Button.Search}" Click="SearchClick"  Content="검색" FontSize="30" Width="200" Height="60" Margin="0,10,0,0" Foreground="Black"/>
+                            <CheckBox IsChecked="{Binding DisplayReject}" Margin="20,10,0,0" VerticalAlignment="Center">
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="3" ScaleY="3"/>
+                                </CheckBox.LayoutTransform>
+                            </CheckBox>
+                            <TextBlock FontSize="20" Width="231" VerticalAlignment="Center" TextAlignment="Left" Text="미검증만 표시" Margin="10,29.5,10,10" Foreground="Black" HorizontalAlignment="Left" Height="30.5"/>
+                            <StackPanel Orientation="Horizontal" Height="60">
+                                <Button Style="{StaticResource Style.Button.Common}" Click="RefreshClick" Content="새로고침" FontSize="30" Width="200" Margin="10 0"/>
+                                <Button Style="{StaticResource Style.Button.Common}" Click="OpenNewPrint" Content="신규 발행" FontSize="30" Width="200" Margin="10 0"/>
+                                <Button Style="{StaticResource Style.Button.Common}" Click="ReprintClick" Content="재발행" FontSize="30" Width="200" Margin="10 0"/>
+                                <Button Style="{StaticResource Style.Button.Common}" Click="ManualVerificationOpenClick" Content="수동 검증" FontSize="30" Width="200" Margin="10 0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <Border Margin="10" Grid.Row="1" BorderThickness="2" BorderBrush="{DynamicResource Brush.LightGray}">
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Button Style="{StaticResource Style.Button.Top}" Click="CaseErectSearchTopClick" Margin="10"/>
+                                <Button Style="{StaticResource Style.Button.Up}" Click="CaseErectSearchUpClick" Margin="10"/>
+                                <Button Style="{StaticResource Style.Button.Down}" Click="CaseErectSearchDownClick" Margin="10"/>
+                                <Button Style="{StaticResource Style.Button.Bottom}" Click="CaseErectSearchBottomClick" Margin="10"/>
+                            </StackPanel>
+                            <DataGrid x:Name="SearchGrid" Style="{StaticResource Style.DataGrid.Common}" Margin="20,20,0,13" FontSize="43" ItemsSource="{Binding CaseErectSearchList}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="호기" Binding="{Binding ErectorType}" Width="300"/>
+                                    <DataGridTextColumn Header="박스 ID" Binding="{Binding BoxId}"  Width="318"/>
+                                    <DataGridTextColumn Header="박스 타입" Binding="{Binding BoxType}"  Width="200"/>
+                                    <DataGridTextColumn Header="출고 일시" Binding="{Binding ErectedAt, StringFormat=yy-MM-dd HH:mm:ss}" Width="500"/>
+                                    <DataGridTextColumn Header="인쇄 수량" Binding="{Binding PrintCount}" Width="200"/>
+                                    <DataGridTemplateColumn Header="검증결과" Width="296">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image x:Name="image" Width="40" Source="{StaticResource Image.LedOn}" Stretch="Uniform"/>
+                                                <DataTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding Verification}" Value="N">
+                                                        <Setter TargetName="image" Property="Source" Value="/Images/LedOff.png"/>
+                                                    </DataTrigger>
+                                                </DataTemplate.Triggers>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <!--status-->
+        <StackPanel  Orientation="Horizontal" Grid.Row="0" Height="50" VerticalAlignment="Bottom" Width="1638" HorizontalAlignment="Right">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Images/tab_underline.png"/>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal" Width="auto" Margin="100,0,10,0" HorizontalAlignment="Right" >
+                <TextBlock FontWeight="Bold" FontSize="20" Text="ECS" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                <Image Width="20" Stretch="Uniform" Margin="5,5,5,13">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{StaticResource Image.LedOn}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ServerConnection, ElementName=ViewModel}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource Image.LedOff}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="auto" Margin="0,0,10,0" >
+                <TextBlock FontWeight="Bold" FontSize="20" Text="제함기#1" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                <Image Width="20" Stretch="Uniform" Margin="5,5,5,13">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{StaticResource Image.LedOn}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Erector1Connection, ElementName=ViewModel}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource Image.LedOff}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="auto" Margin="0,0,10,0" >
+                <TextBlock FontWeight="Bold" FontSize="20" Text="제함기#2" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                <Image Width="20" Stretch="Uniform" Margin="5,5,5,13">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{StaticResource Image.LedOn}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Erector2Connection, ElementName=ViewModel}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource Image.LedOff}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="auto" Margin="0,0,10,0" >
+                <TextBlock FontWeight="Bold" FontSize="20" Text="잉크젯#1" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                <Image Width="20" Stretch="Uniform" Margin="5,5,5,13">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{StaticResource Image.LedOn}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Inkjet1Connection, ElementName=ViewModel}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource Image.LedOff}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="auto" Margin="0,0,10,0" >
+                <TextBlock FontWeight="Bold" FontSize="20" Text="잉크젯#2" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                <Image Width="20" Stretch="Uniform" Margin="5,5,5,13" HorizontalAlignment="Right">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{StaticResource Image.LedOn}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Inkjet2Connection, ElementName=ViewModel}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource Image.LedOff}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="auto" Margin="0,0,10,0" >
+                <TextBlock FontWeight="Bold" FontSize="20" Text="BCR#1" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                <Image Width="20" Stretch="Uniform" Margin="5,5,5,13">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{StaticResource Image.LedOn}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Bcr1Connection, ElementName=ViewModel}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource Image.LedOff}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="auto" Margin="0,0,10,0" >
+                <TextBlock FontWeight="Bold" FontSize="20" Text="BCR#2" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                <Image Width="20" Stretch="Uniform" Margin="5,5,5,13" HorizontalAlignment="Right">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{StaticResource Image.LedOn}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Bcr2Connection, ElementName=ViewModel}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource Image.LedOff}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Width="auto" Margin="0,0,10,0" >
+                <TextBlock FontWeight="Bold" FontSize="20" Text="프린터" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                <Image Width="20" Stretch="Uniform" Margin="5,5,5,13" HorizontalAlignment="Right">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{StaticResource Image.LedOn}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding PrinterConnection, ElementName=ViewModel}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource Image.LedOff}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </StackPanel>
+        <!--popup-->
+            <Grid Background="Transparent" Grid.RowSpan="2" Visibility="{Binding ShowNumberingPopup, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue = hidden}">
+            <Border Background="{StaticResource Brush.LightGray}" Width="1850" Height="900" BorderBrush="#FF777777" BorderThickness="1">
+                <DockPanel Grid.Row="0" Background="White">
+                    <Border DockPanel.Dock="Top" Height="76" VerticalAlignment="Top">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/ECS.Touch;component/Images/MainBackground1.png"/>
+                        </Border.Background>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock TextWrapping="Wrap" Text="채번 설정" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,23,0,0" FontSize="20" FontFamily="/ECS.Touch;component/Font/#Noto Sans CJK KR Black" Width="1772"/>
+                            <Button Click="NumberingPopupCloseClick" Style="{StaticResource Style.Button.Close}" Margin="0,0,20,0" BorderBrush="{x:Null}" Width="36" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                    <DockPanel DockPanel.Dock="Top" Height="90">
+                        <ComboBox Name="ErectorType" Width="200" SelectedIndex="0" FontSize="30" FontFamily="{StaticResource Font.Common}" DockPanel.Dock="Left" HorizontalContentAlignment="Center" Margin="20">
+                            <ComboBoxItem Content="1호기"/>
+                            <ComboBoxItem Content="2호기"/>
+                        </ComboBox>
+
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" FlowDirection="RightToLeft">
+                            <Button Click="NumberingPopupRefreshClick" Style="{StaticResource Style.Button.Common}" Height="70" Margin="10,0,0,0" VerticalAlignment="Bottom">
+                                <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="새로고침" Margin="3" Width="200"/>
+                            </Button>
+                            <Button Click="NumberingDeleteClick" Style="{StaticResource Style.Button.Common}" Height="70" Margin="10,0,0,0" VerticalAlignment="Bottom">
+                                <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="삭제" Margin="3" Width="200"/>
+                            </Button>
+                            <Button Click="NumberingUpdateClick" Style="{StaticResource Style.Button.Common}" Height="70" Margin="10,0,0,0" VerticalAlignment="Bottom">
+                                <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="수정" Margin="3" Width="200"/>
+                            </Button>
+                            <Button Click="NumberingInsertClick" Style="{StaticResource Style.Button.Common}" Height="70" Margin="10,0,0,0" VerticalAlignment="Bottom">
+                                <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="추가" Margin="3" Width="200"/>
+                            </Button>
+                        </StackPanel>
+                    </DockPanel>
+                    <StackPanel DockPanel.Dock="Left" Width="398">
+                        <Image Source="/ECS.Touch;component/Images/box.png" Stretch="Uniform" Margin="20 20 0 0"/>
+                        <Border Background="{StaticResource Brush.LightGray}" Height="396" Margin="25 0">
+                            <StackPanel Margin="15 20 0 0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="No : " FontSize="35" Width="150" TextAlignment="Right"/>
+                                    <TextBlock Text="{Binding SelectedBoxInfo.No}" FontSize="35"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Name : " FontSize="35" Width="150" TextAlignment="Right"/>
+                                    <TextBlock Text="{Binding SelectedBoxInfo.Name}" FontSize="35"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Weight : " FontSize="35" Width="150" TextAlignment="Right"/>
+                                    <TextBlock Text="{Binding SelectedBoxInfo.Weight}" FontSize="35"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Type : " FontSize="35" Width="150" TextAlignment="Right"/>
+                                    <TextBlock Text="{Binding SelectedBoxInfo.BoxTypeCd}" FontSize="35"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="L : " FontSize="35" Width="150" TextAlignment="Right"/>
+                                    <TextBlock Text="{Binding SelectedBoxInfo.Length}" FontSize="35"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="W : " FontSize="35" Width="150" TextAlignment="Right"/>
+                                    <TextBlock Text="{Binding SelectedBoxInfo.Width}" FontSize="35"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="H : " FontSize="35" Width="150" TextAlignment="Right"/>
+                                    <TextBlock Text="{Binding SelectedBoxInfo.Height}" FontSize="35"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <Border BorderBrush="#FFBEC0C2" BorderThickness="1" Margin="20" Width="1416">
+                        <DockPanel Grid.ColumnSpan="2">
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0 0 10 0" DockPanel.Dock="Right">
+                                <Button Style="{StaticResource Style.Button.Top}" Click="NumberingTopClick"/>
+                                <Button Style="{StaticResource Style.Button.Up}" Click="NumberingUpClick"/>
+                                <Button Style="{StaticResource Style.Button.Down}" Click="NumberingDownClick"/>
+                                <Button Style="{StaticResource Style.Button.Bottom}" Click="NumberingBottomClick"/>
+                            </StackPanel>
+                            <DataGrid x:Name="BoxSettingGrid" CurrentCellChanged="BoxSettingGrid_CurrentCellChanged" SelectionChanged="BoxSettingGrid_SelectionChanged" DockPanel.Dock="Left" Style="{StaticResource Style.DataGrid.Common}" FontSize="20" Margin="20" HorizontalAlignment="Right" ItemsSource="{Binding BoxInfoList}" Width="1318">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="No" Binding="{Binding No}"  Width="60"/>
+                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="130"/>
+                                    <DataGridTextColumn Header="Weight" Binding="{Binding Weight}"  Width="90"/>
+                                    <DataGridTextColumn Header="L" Binding="{Binding Length}"  Width="60"/>
+                                    <DataGridTextColumn Header="W" Binding="{Binding Width}"  Width="60"/>
+                                    <DataGridTextColumn Header="H" Binding="{Binding Height}"  Width="60"/>
+                                    <DataGridTextColumn Header="H_Sensor" Binding="{Binding HeightSensor}"  Width="100"/>
+                                    <DataGridTextColumn Header="Type" Binding="{Binding BoxTypeCd}"  Width="64"/>
+                                    <DataGridTextColumn Header="정상 From" Width="115">
+                                        <DataGridTextColumn.Binding>
+                                            <MultiBinding Converter="{StaticResource SwitchMultiConverter}" ConverterParameter="from">
+                                                <Binding ElementName="ErectorType" Path="SelectedIndex"/>
+                                                <Binding/>
+                                            </MultiBinding>
+                                        </DataGridTextColumn.Binding>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Header="정상 To" Width="100">
+                                        <DataGridTextColumn.Binding>
+                                            <MultiBinding Converter="{StaticResource SwitchMultiConverter}" ConverterParameter="to">
+                                                <Binding ElementName="ErectorType" Path="SelectedIndex"/>
+                                                <Binding/>
+                                            </MultiBinding>
+                                        </DataGridTextColumn.Binding>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Header="정상 현재번호" Width="130">
+                                        <DataGridTextColumn.Binding>
+                                            <MultiBinding Converter="{StaticResource SwitchMultiConverter}" ConverterParameter="current">
+                                                <Binding ElementName="ErectorType" Path="SelectedIndex"/>
+                                                <Binding/>
+                                            </MultiBinding>
+                                        </DataGridTextColumn.Binding>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Header="수기 From" Binding="{Binding ManualFrom}"  Width="115"/>
+                                    <DataGridTextColumn Header="수기 To" Binding="{Binding ManualTo}"  Width="100"/>
+                                    <DataGridTextColumn Header="수기 현재번호" Binding="{Binding ManualCurrent}"  Width="130"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </Border>
+                </DockPanel>
+            </Border>
+            <!--message box-->
+            <Grid Name="ManualVerificationBoxId" Background="Transparent" Grid.RowSpan="2" Visibility="{Binding ShowNumberingMessageBox, Converter={StaticResource BooleanToVisibilityConverter},FallbackValue = hidden}">
+                <Border Background="{StaticResource Brush.LightGray}" Width="1250" Height="550" BorderBrush="#FF777777" BorderThickness="1">
+                    <DockPanel Grid.Row="0" Background="White">
+                        <Border DockPanel.Dock="Top" Background="{StaticResource Brush.LightGray}" Height="56" VerticalAlignment="Top">
+                            <DockPanel>
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="20" FontFamily="{StaticResource Font.Common}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Text" Value="추가"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsInsert}" Value="False">
+                                                    <Setter Property="Text" Value="수정"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                                <Button Click="NumberingMessageBoxCloseClick" Style="{StaticResource Style.Button.Close}" Margin="0,0,20,0" BorderBrush="{x:Null}" Width="36" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </DockPanel>
+                        </Border>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Grid.Row="0" Grid.ColumnSpan="2">
+                                <Button Click="NumberingMessageBoxSubmitClick" Style="{StaticResource Style.Button.Common}" Height="70" Margin="25 0 0 12" VerticalAlignment="Bottom">
+                                    <TextBlock FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="확인" Margin="3" Width="200"/>
+                                </Button>
+                            </StackPanel>
+                            <Border Grid.Column="0" Grid.Row="1">
+                                <StackPanel Margin="15 20 0 0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Name : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetName}" FontSize="40"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Weight : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetWeight}" FontSize="40"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Width : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetWidth}" FontSize="40"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock  FontSize="40" Width="220" TextAlignment="Right"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="정상 From : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetNormalFrom}" FontSize="40"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="수기 From : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetManualFrom}" FontSize="40"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="1">
+                                <StackPanel Margin="15 20 0 0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Type : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width="300" Text="{Binding TargetType}" FontSize="40" Background="Transparent"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Length : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetLength}" FontSize="40"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Height : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetHeight}" FontSize="40"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="H_Sensor : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetHeightSensor}" FontSize="40"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="정상 To : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetNormalTo}" FontSize="40"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="수기 To : " FontSize="40" Width="220" TextAlignment="Right"/>
+                                        <TextBox Style="{StaticResource Style.TextBox.NoneBorder}" FontFamily="{StaticResource Font.Common}" Width ="300" Background="Transparent" Text="{Binding TargetManualTo}" FontSize="40"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </DockPanel>
+
+                </Border>
+            </Grid>
+        </Grid>
+        <!--new print box-->
+        <Grid Background="Transparent" Grid.RowSpan="2" Visibility="{Binding ShowNewPrint, Converter={StaticResource BooleanToVisibilityConverter},FallbackValue = hidden}">
+            <Border Background="{StaticResource Brush.LightGray}" Width="600" Height="200" BorderBrush="#FF777777" BorderThickness="1">
+                <DockPanel Grid.Row="0" Background="White">
+                    <!--title-->
+                    <Border DockPanel.Dock="Top" Background="{StaticResource Brush.LightGray}" Height="56" VerticalAlignment="Top">
+                        <DockPanel>
+                            <TextBlock TextWrapping="Wrap" Text="신규발행" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="20" FontFamily="{StaticResource Font.Common}"/>
+                            <Button Click="NewPrintCloseClick" Style="{StaticResource Style.Button.Close}" Margin="0,0,20,0" BorderBrush="{x:Null}" Width="36" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="수량" FontSize="40" TextAlignment="Center" Margin="0,30,0,0" Foreground="{StaticResource Brush.DarkGray}"/>
+                        <TextBox Grid.Column="1" Name="newPrintCount" MaxLength="4" TextWrapping="Wrap" Text="{Binding NewPrintCount}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="60" FontFamily="{StaticResource Font.Common}" Width="180" KeyDown="newPrintCount_KeyDown"/>
+                        <Button Grid.Column="2" Style="{StaticResource Style.Button.Common}" Click="NewPrintClick" Height="80" Margin="0,30,0,0" VerticalAlignment="Top">
+                            <TextBlock  FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Text="인쇄" Width="100"/>
+                        </Button>
+
+                    </Grid>
+                </DockPanel>
+            </Border>
+        </Grid>
+
+        <!--manual verification box-->
+        <Grid Background="Transparent" Grid.RowSpan="2" Visibility="{Binding ShowManualVerification, Converter={StaticResource BooleanToVisibilityConverter},FallbackValue = hidden}">
+            <Border Background="{StaticResource Brush.LightGray}" Width="600" Height="505" BorderBrush="#FF777777" BorderThickness="1">
+                <DockPanel Grid.Row="0" Background="White">
+                    <!--title-->
+                    <Border DockPanel.Dock="Top" Background="{StaticResource Brush.LightGray}" Height="56" VerticalAlignment="Top">
+                        <DockPanel>
+                            <TextBlock TextWrapping="Wrap" Text="수동 검증" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="20" FontFamily="{StaticResource Font.Common}">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsInsert}" Value="False">
+                                                <Setter Property="Text" Value="수정"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <Button Click="ManualVerificationCloseClick" Style="{StaticResource Style.Button.Close}" Margin="0,0,20,0" BorderBrush="{x:Null}" Width="36" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Border>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="25 0 25 0" VerticalAlignment="Bottom">
+                            <TextBlock Text="박스 ID" FontSize="20" TextAlignment="Left" Foreground="{StaticResource Brush.DarkGray}" Margin="0,20,0,0"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="700*"/>
+                                    <ColumnDefinition Width="130"/>
+                                </Grid.ColumnDefinitions>
+                                <Border BorderThickness="2" Grid.Column="0">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/Images/tab_underline.png" Stretch="UniformToFill"/>
+                                    </Border.Background>
+                                    <TextBox CharacterCasing="Upper" x:Name="BoxId" MaxLength="10" KeyDown="ManualVerificationKeyDown" TextChanged="BoxId_TextChanged" Style="{StaticResource Style.TextBox.NoneBorder}" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="{StaticResource Font.Common}" Margin="0,-2" Foreground="#FF004A74" Background="{x:Null}"/>
+                                </Border>
+                                <Button Grid.Column="1" Style="{StaticResource Style.Button.Common}" Height="40" Margin="0,0,10,0" VerticalAlignment="Top" Click="ManualBoxIdConfirmButtonClick">
+                                    <TextBlock FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Text="확인" Margin="3" Width="100"/>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                        <Border Grid.Row="1" Grid.Column="0">
+                            <DataGrid x:Name="NonVerifiedBoxGird" Style="{StaticResource Style.DataGrid.Common}" Width="502" Height="291" FontSize="30" ItemsSource="{Binding NonVerifiedBoxList}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="호기" Binding="{Binding ErectorType}"  Width="130"/>
+                                    <DataGridTextColumn Header="박스ID" Binding="{Binding BoxId}"  Width="220"/>
+                                    <DataGridTextColumn Header="박스 타입" Binding="{Binding BoxType}"  Width="150"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Border>
+                        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="40">
+                            <Button Style="{StaticResource Style.Button.Up}" Click="ManualVerificationUpClick" Height="100"/>
+                            <Button Style="{StaticResource Style.Button.Down}" Click="ManualVerificationDownClick" Height="100"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Top" Height="40">
+                            <Button Style="{StaticResource Style.Button.Common}" Click="ManualVerificationClick" Height="40" Margin="0,0,10,0" VerticalAlignment="Top">
+                                <TextBlock  FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Text="검증" Margin="3" Width="100"/>
+                            </Button>
+                            <Button Style="{StaticResource Style.Button.Common}" Click="ManualVerificationCloseClick" Height="40" Margin="10,0,0,0" VerticalAlignment="Top">
+                                <TextBlock  FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Text="취소" Margin="3" Width="100"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </DockPanel>
+
+            </Border>
+        </Grid>
+
+        <!--password-->
+        <Grid Background="Transparent" Grid.RowSpan="2" Visibility="{Binding ShowPasswordBox, Converter={StaticResource BooleanToVisibilityConverter},FallbackValue = hidden}">
+            <Border Background="{StaticResource Brush.LightGray}" Width="1000" Height="500" BorderBrush="#FF777777" BorderThickness="1">
+                <DockPanel Grid.Row="0" Background="{StaticResource Brush.White}">
+                    <Border DockPanel.Dock="Top" Background="{StaticResource Brush.DarkGray}" Height="56" VerticalAlignment="Top">
+                        <DockPanel>
+                            <TextBlock TextWrapping="Wrap" Text="로그인" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="20" FontFamily="{StaticResource Font.Common}"/>
+                            <Button Click="PasswordBoxCloseClick" Style="{StaticResource Style.Button.Close}" Margin="0,0,20,0" BorderBrush="{x:Null}" Width="36" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Border>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+
+                        <TextBlock TextAlignment="Center" Text="비밀 번호 : " FontSize="40"/>
+                        <PasswordBox x:Name="Password" Margin="0 5 0 0" Width="250"  FontSize="30"/>
+                        <Button Grid.Column="1" Style="{StaticResource Style.Button.Common}" Height="55" Margin="10,5,10,0" VerticalAlignment="Top" Click="PasswordBoxConfirmButtonClick">
+                            <TextBlock FontSize="20" TextAlignment="Center" VerticalAlignment="Center" Text="확인" Margin="3" Width="100"/>
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+        </Grid>
+
+        <!--nitify box-->
+        <Grid Background="Transparent" Grid.RowSpan="2" Visibility="{Binding ShowErrorMessage, Converter={StaticResource BooleanToVisibilityConverter},FallbackValue = hidden}">
+            <Border Background="{StaticResource Brush.LightGray}" Width="800" Height="400" BorderBrush="#FF777777" BorderThickness="1">
+                <DockPanel Grid.Row="0" Background="{StaticResource Brush.LightGray}">
+                    <Border DockPanel.Dock="Top" Background="{StaticResource Brush.DarkGray}" Height="56" VerticalAlignment="Top">
+                        <DockPanel>
+                            <TextBlock TextWrapping="Wrap" Text="알림" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="20" FontFamily="{StaticResource Font.Common}"/>
+                            <Button Click="ErrorMessageCloseClick" Style="{StaticResource Style.Button.Close}" Margin="0,0,20,0" BorderBrush="{x:Null}" Width="36" Height="36" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Border>
+                    <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Margin="0 122 0 0" Text="{Binding ErrorMessage}" FontSize="40"/>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

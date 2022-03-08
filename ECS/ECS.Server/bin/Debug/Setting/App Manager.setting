@@ -1,0 +1,24 @@
+{
+  "SpiralBufferSettingBoxCount": 20,
+  "DataBaseBackUpDeleteDay": 30,
+  "PackageResultImagePath": "http://192.168.12.21/SP",
+  "Organize": {
+    "Hour": 5,
+    "Miniute": 0,
+    "Second": 0
+  },
+  "ThreadCultureName": "ko-KR",
+  "UiCultureName": "ko-KR",
+  "AllowMultiProcess": false,
+  "UseAsyncEvent": false,
+  "UseProcessRespondingMonitoring": true,
+  "DisableDiskDefragmentation": true,
+  "DisableSleepModeAndDisplayOff": true,
+  "Logger": {
+    "FileExtension": "log",
+    "Level": 2,
+    "Division": 1,
+    "SplitSizeMegabytes": 5,
+    "KeepingDays": 30
+  }
+}
